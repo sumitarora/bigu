@@ -1,3 +1,11 @@
+angular.module('bigu.controllers').controller('HelloCtrl', function ($scope, $log) {
+
+$log.info("controller");
+
+  
+  
+
+});
 angular.module('bigu.controllers').controller('SampleCtrl', function ($scope, $log) {
 
   /*
@@ -7,6 +15,7 @@ angular.module('bigu.controllers').controller('SampleCtrl', function ($scope, $l
   */
   $log.info("Sample controller instantiated.");
   $scope.sample = "Sample text goes here";
+  $scope.name = "sumit master mind";
 
   $scope.btnclicked = function() {
     $scope.sample = "You clicked the button" + (new Date()).toTimeString();
