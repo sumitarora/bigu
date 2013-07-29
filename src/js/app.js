@@ -25,7 +25,20 @@ angular.module('bigu', ['bigu.filters', 'bigu.services', 'bigu.directives', 'big
             controller:  'FirstCtrl'
           }
       );
+
+      $routeProvider.when("/courseseries",
+          {
+            templateUrl: 'partials/CourseSeries.html',
+            controller:  'CourseSeriesCtrl'
+          }
+      );
       
+      $routeProvider.when("/grid",
+          {
+            templateUrl: 'partials/grid.html',
+            controller:  'GridCtrl'
+          }
+      );
 
     }]);
 

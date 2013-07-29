@@ -1,6 +1,20 @@
+angular.module('bigu.controllers').controller('CourseSeriesCtrl', function ($scope, $log) {
+
+$log.info("Course Series");
+
+$scope.showmsg = function(){
+	$log.info("ok");
+};
+});
 angular.module('bigu.controllers').controller('FirstCtrl', function ($scope, $log) {
 
 $log.info("Testing Controller");
+
+
+});
+angular.module('bigu.controllers').controller('GridCtrl', function ($scope, $log) {
+
+$log.info("Grid Controller");
 
 });
 angular.module('bigu.controllers').controller('HelloCtrl', function ($scope, $log) {
