@@ -19,6 +19,13 @@ angular.module('bigu', ['bigu.filters', 'bigu.services', 'bigu.directives', 'big
           }
       );
       
+      $routeProvider.when("/first",
+          {
+            templateUrl: 'partials/first.html',
+            controller:  'FirstCtrl'
+          }
+      );
+      
 
     }]);
 

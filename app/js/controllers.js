@@ -1,3 +1,8 @@
+angular.module('bigu.controllers').controller('FirstCtrl', function ($scope, $log) {
+
+$log.info("Testing Controller");
+
+});
 angular.module('bigu.controllers').controller('HelloCtrl', function ($scope, $log) {
 
 $log.info("controller");
