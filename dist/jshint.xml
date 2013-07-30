@@ -11,7 +11,6 @@
 		<error line="1" column="0" severity="warning" message="Unused variable: &apos;$scope&apos;" source="jshint.implied-unuseds" />
 	</file>
 	<file name="src/js/controllers/grid_controller.js">
-		<error line="1" column="0" severity="warning" message="Unused variable: &apos;$scope&apos;" source="jshint.implied-unuseds" />
 	</file>
 	<file name="src/js/controllers/hello_controller.js">
 		<error line="1" column="0" severity="warning" message="Unused variable: &apos;$scope&apos;" source="jshint.implied-unuseds" />
@@ -32,8 +31,7 @@
 	</file>
 	<file name="app/js/controllers.js">
 		<error line="16" column="0" severity="warning" message="Unused variable: &apos;$scope&apos;" source="jshint.implied-unuseds" />
-		<error line="22" column="0" severity="warning" message="Unused variable: &apos;$scope&apos;" source="jshint.implied-unuseds" />
-		<error line="27" column="0" severity="warning" message="Unused variable: &apos;$scope&apos;" source="jshint.implied-unuseds" />
+		<error line="43" column="0" severity="warning" message="Unused variable: &apos;$scope&apos;" source="jshint.implied-unuseds" />
 	</file>
 	<file name="app/js/directives.js">
 		<error line="8" column="0" severity="warning" message="Unused variable: &apos;attrs&apos;" source="jshint.implied-unuseds" />
