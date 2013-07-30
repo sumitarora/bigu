@@ -2,9 +2,16 @@ angular.module('bigu.controllers').controller('CourseSeriesCtrl', function ($sco
 
 $log.info("Course Series");
 
-$scope.showmsg = function(){
-	$log.info("ok");
+$scope.save = function(){
+	$log.info("Saved!");
 };
+
+$scope.cancel = function(){
+	$log.info("Cancelled");
+};
+
+$scope.test = "Testing";
+
 });
 angular.module('bigu.controllers').controller('FirstCtrl', function ($scope, $log) {
 
