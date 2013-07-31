@@ -1,3 +1,11 @@
+angular.module('bigu.controllers').controller('DetailCtrl', function ($scope, $log) {
+
+$log.info("Detail controller initiated");
+
+  
+  
+
+});
 angular.module('bigu.controllers').controller('HelloCtrl', function ($scope, $log) {
 
 $log.info("controller");
@@ -20,5 +28,13 @@ angular.module('bigu.controllers').controller('SampleCtrl', function ($scope, $l
   $scope.btnclicked = function() {
     $scope.sample = "You clicked the button" + (new Date()).toTimeString();
   };
+
+});
+angular.module('bigu.controllers').controller('SecondCtrl', function ($scope, $log) {
+
+$log.info("second controller initiated");
+
+  
+  
 
 });
