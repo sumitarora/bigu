@@ -1,6 +1,43 @@
+angular.module('bigu.controllers').controller('CourseSeriesCtrl', function ($scope, $log) {
+
+$log.info("Course Series");
+
+$scope.save = function(){
+	$log.info("Saved!");
+};
+
+$scope.cancel = function(){
+	$log.info("Cancelled");
+};
+
+$scope.test = "Testing";
+
+});
 angular.module('bigu.controllers').controller('FirstCtrl', function ($scope, $log) {
 
 $log.info("Testing Controller");
+
+
+});
+angular.module('bigu.controllers').controller('GridCtrl', function ($scope, $log) {
+
+$log.info("Grid Controller");
+$scope.showGrid = true;
+
+$scope.clickAdd = function(){
+	$log.info("Added");
+	$scope.showGrid = false;
+};
+
+$scope.clickSave = function(){
+	$log.info("Save Working");
+	$scope.showGrid = true;
+};
+
+$scope.clickCancel = function(){
+	$log.info("Cancel Working");
+	$scope.showGrid = true;
+};
 
 });
 angular.module('bigu.controllers').controller('HelloCtrl', function ($scope, $log) {
