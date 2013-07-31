@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 angular.module('bigu.controllers').controller('DetailCtrl', function ($scope, $log) {
 
 $log.info("Detail controller initiated");
@@ -14,6 +15,21 @@ $log.info("controller");
   
 
 });
+=======
+angular.module('bigu.controllers').controller('FirstCtrl', function ($scope, $log) {
+
+$log.info("Testing Controller");
+
+});
+angular.module('bigu.controllers').controller('HelloCtrl', function ($scope, $log) {
+
+$log.info("controller");
+
+  
+  
+
+});
+>>>>>>> 861690bcafdc44d1721cd6cb4e6d2c4951a7bdb6
 angular.module('bigu.controllers').controller('SampleCtrl', function ($scope, $log) {
 
   /*
