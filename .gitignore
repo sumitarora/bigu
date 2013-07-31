@@ -21,6 +21,9 @@ logs/*
 *.tar
 *.zip
 
+app/js
+dist
+
 # Logs and databases #
 ######################
 *.log
