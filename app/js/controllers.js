@@ -1,35 +1,14 @@
+angular.module('bigu.controllers').controller('CategoriesCtrl', function ($scope, $log) {
+
+$log.info("Categories controller initiated");
+
+  
+  
+
+});
 angular.module('bigu.controllers').controller('CourseSeriesCtrl', function ($scope, $log) {
 
-$log.info("Course Series");
-
-$scope.save = function(){
-	$log.info("Saved!");
-};
-
-$scope.cancel = function(){
-	$log.info("Cancelled");
-};
-
-$scope.test = "Testing";
-
-});
-angular.module('bigu.controllers').controller('DetailCtrl', function ($scope, $log) {
-
-$log.info("Detail controller initiated");
-
-  
-  
-
-});
-angular.module('bigu.controllers').controller('FirstCtrl', function ($scope, $log) {
-
-$log.info("Testing Controller");
-
-
-});
-angular.module('bigu.controllers').controller('GridCtrl', function ($scope, $log) {
-
-$log.info("Grid Controller");
+$log.info("Course Series Controller");
 $scope.showGrid = true;
 
 $scope.clickAdd = function(){
@@ -46,14 +25,6 @@ $scope.clickCancel = function(){
 	$log.info("Cancel Working");
 	$scope.showGrid = true;
 };
-
-});
-angular.module('bigu.controllers').controller('HelloCtrl', function ($scope, $log) {
-
-$log.info("controller");
-
-  
-  
 
 });
 angular.module('bigu.controllers').controller('SampleCtrl', function ($scope, $log) {

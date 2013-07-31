@@ -1,7 +1,96 @@
-
+<div ng-show = "showGrid">
 <h3> Course/Series </h3>
 
 <form class = "form-horizontal">
+<div class="control-group">
+<select >
+<option>Search by</option>
+</select>
+<input type="text text-large" placeholder="text">
+<button class = "btn btn-inverse" type = "button">Search</button>
+<button type = "button" class = "btn btn-primary" ng-click = "clickAdd()">Add +</button>
+</div>
+<br/>
+<table class = "table table-bordered table-hover table-condensed">
+<thead>
+<tr>
+<th>Title</th>
+<th>Category</th>
+<th>Website</th>
+<th>Type</th>
+<th>View Count</th>
+<th>Rating</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Course 1</td>
+<td>Category 1</td>
+<td>www.website1.com</td>
+<td>Course</td>
+<td>1200</td>
+<td>4.9</td>
+<td>
+<button class = "btn btn-inverse btn-small">Edit</button>
+<button class = "btn btn-danger btn-small">Delete</button>
+</td>
+</tr>
+<tr>
+<td>Course 2</td>
+<td>Category 2</td>
+<td>www.website2.com</td>
+<td>Course</td>
+<td>1200</td>
+<td>4.9</td>
+<td>
+<button class = "btn btn-inverse btn-small">Edit</button>
+<button class = "btn btn-danger btn-small">Delete</button>
+</td>
+</tr>
+<tr>
+<td>Session 1</td>
+<td>Category 1</td>
+<td>www.website2.com</td>
+<td>Session</td>
+<td>1200</td>
+<td>4.9</td>
+<td>
+<button class = "btn btn-inverse btn-small">Edit</button>
+<button class = "btn btn-danger btn-small">Delete</button>
+</td>
+</tr>
+<tr>
+<td>Course 3</td>
+<td>Category 1</td>
+<td>www.website4.com</td>
+<td>Course</td>
+<td>1200</td>
+<td>4.9</td>
+<td>
+<button class = "btn btn-inverse btn-small">Edit</button>
+<button class = "btn btn-danger btn-small">Delete</button>
+</td>
+</tr>
+</tbody>
+</table>
+
+<div class="pagination pagination-centered">
+  <ul>
+    <li class="disabled"><a href="#">Prev</a></li>
+    <li class="active"><a href="#">1</a></li>
+    <li class="disabled"><a href="#">2</a></li>
+	<li class="disabled"><a href="#">3</a></li>
+	<li class="disabled"><a href="#">4</a></li>
+	<li class="disabled"><a href="#">5</a></li>
+	<li class="disabled"><a href="#">Next</a></li>
+  </ul>
+</div>
+</div>
+
+<div ng-show = "!showGrid">
+<h3> Course/Series </h3>
+
 <div class = "control-group">
 <label class = "control-label" for = "inputTitle">Title</label>
 <div class = "controls">
@@ -76,9 +165,12 @@ Course
 
 <div class = "controls">
 <p class = "btn-center">
-<button class = "btn btn-success" type = "button" ng-click = "save()">Save</button>
-<button class = "btn btn-danger" type = "button" ng-click = "cancel()">Cancel</button>
+<button class = "btn btn-success" type = "button" ng-click = "clickSave()">Save</button>
+<button class = "btn btn-danger" type = "button" ng-click = "clickCancel()">Cancel</button>
 </p>
-</div>
 
+</div>
 </body>
+
+</div>
+</form>

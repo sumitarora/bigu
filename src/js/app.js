@@ -12,17 +12,11 @@ angular.module('bigu', ['bigu.filters', 'bigu.services', 'bigu.directives', 'big
           }
       );
       
-      $routeProvider.when("/hello",
-          {
-            templateUrl: 'partials/hello.html',
-            controller:  'HelloCtrl'
-          }
-      );
       
-      $routeProvider.when("/Detail",
+      $routeProvider.when("/Categories",
           {
-            templateUrl: 'partials/Detail.html',
-            controller:  'DetailCtrl'
+            templateUrl: 'partials/categories.html',
+            controller:  'CategoriesCtrl'
           }
       );
 
@@ -32,25 +26,11 @@ angular.module('bigu', ['bigu.filters', 'bigu.services', 'bigu.directives', 'big
             controller:  'SecondCtrl'
           }
       );
-
-      $routeProvider.when("/first",
-          {
-            templateUrl: 'partials/first.html',
-            controller:  'FirstCtrl'
-          }
-      );
-
-      $routeProvider.when("/courseseries",
-          {
-            templateUrl: 'partials/CourseSeries.html',
-            controller:  'CourseSeriesCtrl'
-          }
-      );
       
-      $routeProvider.when("/grid",
+      $routeProvider.when("/CourseSeries",
           {
-            templateUrl: 'partials/grid.html',
-            controller:  'GridCtrl'
+            templateUrl: 'partials/courseseries.html',
+            controller:  'CourseSeriesCtrl'
           }
       );
 
