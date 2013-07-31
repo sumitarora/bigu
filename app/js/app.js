@@ -19,7 +19,6 @@ angular.module('bigu', ['bigu.filters', 'bigu.services', 'bigu.directives', 'big
           }
       );
       
-<<<<<<< HEAD
       $routeProvider.when("/Detail",
           {
             templateUrl: 'partials/Detail.html',
@@ -34,8 +33,6 @@ angular.module('bigu', ['bigu.filters', 'bigu.services', 'bigu.directives', 'big
           }
       );
 
-
-=======
       $routeProvider.when("/first",
           {
             templateUrl: 'partials/first.html',
@@ -56,7 +53,6 @@ angular.module('bigu', ['bigu.filters', 'bigu.services', 'bigu.directives', 'big
             controller:  'GridCtrl'
           }
       );
->>>>>>> 861690bcafdc44d1721cd6cb4e6d2c4951a7bdb6
 
     }]);
 

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 angular.module('bigu.controllers').controller('CourseSeriesCtrl', function ($scope, $log) {
 
 $log.info("Course Series");
@@ -12,6 +11,14 @@ $scope.cancel = function(){
 };
 
 $scope.test = "Testing";
+
+});
+angular.module('bigu.controllers').controller('DetailCtrl', function ($scope, $log) {
+
+$log.info("Detail controller initiated");
+
+  
+  
 
 });
 angular.module('bigu.controllers').controller('FirstCtrl', function ($scope, $log) {
@@ -39,15 +46,6 @@ $scope.clickCancel = function(){
 	$log.info("Cancel Working");
 	$scope.showGrid = true;
 };
-=======
-<<<<<<< HEAD
-angular.module('bigu.controllers').controller('DetailCtrl', function ($scope, $log) {
-
-$log.info("Detail controller initiated");
-
-  
-  
->>>>>>> a3a10fdec2b71348b2d94439f12e2165de8942fb
 
 });
 angular.module('bigu.controllers').controller('HelloCtrl', function ($scope, $log) {
@@ -58,24 +56,6 @@ $log.info("controller");
   
 
 });
-<<<<<<< HEAD
-=======
-=======
-angular.module('bigu.controllers').controller('FirstCtrl', function ($scope, $log) {
-
-$log.info("Testing Controller");
-
-});
-angular.module('bigu.controllers').controller('HelloCtrl', function ($scope, $log) {
-
-$log.info("controller");
-
-  
-  
-
-});
->>>>>>> 861690bcafdc44d1721cd6cb4e6d2c4951a7bdb6
->>>>>>> a3a10fdec2b71348b2d94439f12e2165de8942fb
 angular.module('bigu.controllers').controller('SampleCtrl', function ($scope, $log) {
 
   /*
