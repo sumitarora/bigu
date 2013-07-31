@@ -19,6 +19,20 @@ angular.module('bigu', ['bigu.filters', 'bigu.services', 'bigu.directives', 'big
           }
       );
       
+      $routeProvider.when("/Detail",
+          {
+            templateUrl: 'partials/Detail.html',
+            controller:  'DetailCtrl'
+          }
+      );
+
+       $routeProvider.when("/SecondForm",
+          {
+            templateUrl: 'partials/second.html',
+            controller:  'SecondCtrl'
+          }
+      );
+
       $routeProvider.when("/first",
           {
             templateUrl: 'partials/first.html',
