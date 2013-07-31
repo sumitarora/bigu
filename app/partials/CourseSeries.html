@@ -1,15 +1,18 @@
 <div ng-show = "showGrid">
 <h3> Course/Series </h3>
 
+<div class="control-group pull-right">
 <form class = "form-horizontal">
-<div class="control-group">
 <select >
 <option>Search by</option>
 </select>
 <input type="text text-large" placeholder="text">
 <button class = "btn btn-inverse" type = "button">Search</button>
-<button type = "button" class = "btn btn-primary" ng-click = "clickAdd()">Add +</button>
 </div>
+<div class = "pull-left">
+<button class = "btn btn-primary" ng-click = "clickAdd()">Add <i class = "icon-plus"></i></button>
+</div>
+</form>
 <br/>
 <table class = "table table-bordered table-hover table-condensed">
 <thead>
@@ -24,6 +27,20 @@
 </tr>
 </thead>
 <tbody>
+
+<tr ng-repeat = "course in courses">
+<td>{{course.title}}</td>
+<td>{{course.category}}</td>
+<td>{{course.website}}</td>
+<td>{{course.type}}</td>
+<td>{{course.viewCount}}</td>
+<td>{{course.rating}}</td>
+<td>
+<button class = "btn btn-inverse btn-small">Edit</button>
+<button class = "btn btn-danger btn-small">Delete</button>
+</td>
+</tr>
+  <!--
 <tr>
 <td>Course 1</td>
 <td>Category 1</td>
@@ -72,6 +89,7 @@
 <button class = "btn btn-danger btn-small">Delete</button>
 </td>
 </tr>
+-->
 </tbody>
 </table>
 
@@ -91,6 +109,7 @@
 <div ng-show = "!showGrid">
 <h3> Course/Series </h3>
 
+<form class = "form-horizontal">
 <div class = "control-group">
 <label class = "control-label" for = "inputTitle">Title</label>
 <div class = "controls">
@@ -172,5 +191,9 @@ Course
 </div>
 </body>
 
+</div>
+
+<div>
+<button class = "btn btn-warning" ng-click = "addCourse()">Test Add Course here</button>
 </div>
 </form>
