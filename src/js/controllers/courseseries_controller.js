@@ -8,7 +8,7 @@ $scope.clickAdd = function(){
 	$scope.showGrid = false;
 };
 
-$scope.defaultValuesFunction(){
+$scope.defaultValuesFunction =function(){
 	$scope.course = {type: 'Series', viewCount:'1200', rating: '4.9'};
 };
 

@@ -34,6 +34,8 @@ angular.module('bigu', ['bigu.filters', 'bigu.services', 'bigu.directives', 'big
           }
       );
 
+      
+
     }]);
 
 angular.module('bigu.services', ['ngResource']);
