@@ -8,21 +8,6 @@ $log.info("Categories controller initiated");
 });
 angular.module('bigu.controllers').controller('CourseSeriesCtrl', function ($scope, $log) {
 
-$log.info("Course Series");
-
-$scope.save = function(){
-	$log.info("Saved!");
-};
-
-$scope.cancel = function(){
-	$log.info("Cancelled");
-};
-
-$scope.test = "Testing";
-
-});
-angular.module('bigu.controllers').controller('CourseSeriesCtrl', function ($scope, $log) {
-
 $log.info("Course Series Controller");
 $scope.showGrid = true;
 
@@ -31,9 +16,16 @@ $scope.clickAdd = function(){
 	$scope.showGrid = false;
 };
 
+$scope.courses = [];
+
+$scope.course = {type: 'Series', viewCount:'1200', rating: '4.9'};
+
 $scope.clickSave = function(){
 	$log.info("Save Working");
 	$scope.showGrid = true;
+	$log.info($scope.course);
+	$scope.courses.push($scope.course);
+	$scope.course = {type: 'Series', viewCount:'1200', rating: '4.9'};
 };
 
 $scope.clickCancel = function(){
@@ -41,58 +33,17 @@ $scope.clickCancel = function(){
 	$scope.showGrid = true;
 };
 
-$scope.courses = [
-{title:'T1',category:'C1', website: 'W1', type: 'Type1', viewCount: 'VC1', rating: 'R1'},
-{title:'T2',category:'C2', website: 'W2', type: 'Type2', viewCount: 'VC2', rating: 'R2'}
-];
+/*
+$scope.friends = [];
 
-$scope.addCourse = function(){
-	$log.info("Add Course Working");
-	$scope.courses.push({title:'Title',category:'Category', website: 'Website', type: 'Type', viewCount: 'View Count', rating: 'Rating'});
-};
+$scope.friend = {};
 
-});
-angular.module('bigu.controllers').controller('DetailCtrl', function ($scope, $log) {
+$scope.add = function(){
+	$log.info($scope.friend);
+	$scope.friends.push($scope.friend);
+	$scope.friend = {};
+};*/
 
-$log.info("Detail controller initiated");
-
-  
-  
-
-});
-angular.module('bigu.controllers').controller('FirstCtrl', function ($scope, $log) {
-
-$log.info("Testing Controller");
-
-
-});
-angular.module('bigu.controllers').controller('GridCtrl', function ($scope, $log) {
-
-$log.info("Grid Controller");
-$scope.showGrid = true;
-
-$scope.clickAdd = function(){
-	$log.info("Added");
-	$scope.showGrid = false;
-};
-
-$scope.clickSave = function(){
-	$log.info("Save Working");
-	$scope.showGrid = true;
-};
-
-$scope.clickCancel = function(){
-	$log.info("Cancel Working");
-	$scope.showGrid = true;
-};
-
-});
-angular.module('bigu.controllers').controller('HelloCtrl', function ($scope, $log) {
-
-$log.info("controller");
-
-  
-  
 
 });
 angular.module('bigu.controllers').controller('SampleCtrl', function ($scope, $log) {

@@ -26,8 +26,8 @@
 <th>Actions</th>
 </tr>
 </thead>
-<tbody>
 
+<tbody>
 <tr ng-repeat = "course in courses">
 <td>{{course.title}}</td>
 <td>{{course.category}}</td>
@@ -40,7 +40,8 @@
 <button class = "btn btn-danger btn-small">Delete</button>
 </td>
 </tr>
-  <!--
+
+<!--
 <tr>
 <td>Course 1</td>
 <td>Category 1</td>
@@ -104,9 +105,6 @@
 	<li class="disabled"><a href="#">Next</a></li>
   </ul>
 </div>
-<div>
-<button class = "btn btn-warning" ng-click = "addCourse()">Test Add Course here</button>
-</div>
 </div>
 
 <div ng-show = "!showGrid">
@@ -116,9 +114,10 @@
 <div class = "control-group">
 <label class = "control-label" for = "inputTitle">Title</label>
 <div class = "controls">
-<input type = "text text-large" id = "inputTitle" placeholder = "text">
+<input type = "text text-large" id = "inputTitle" ng-model = "course.title" placeholder = "text"/>
 </div>
 </div>
+
 
 <div class = "control-group">
 <label class = "control-label" for = "inputDescription">Description</label>
@@ -131,7 +130,7 @@
 <label class = "control-label" for = "inputCategory">Category</label>
 <div class = "controls">
 </button>
-<select>
+<select ng-model = "course.category">
   <option>Course 1</option>
   <option>Course 2</option>
   <option>Course 3</option>
@@ -146,7 +145,7 @@
 <label class = "control-label" for = "inputWebsite">Website</label>
 <div class = "controls">
 </button>
-<select>
+<select ng-model = "course.website">
   <option>Website 1</option>
   <option>Website 2</option>
   <option>Website 3</option>
@@ -175,11 +174,12 @@
 <label class = "control-label" for = "inputType">Type</label>
 <div class = "controls">
 <label class = "radio inline">
-<input type = "radio" name = "optionsRadios" id = "optionsRadios1" value = "option1" checked>
+<input type = "radio" ng-model = "course.type" name = "optionsRadios" id = "optionsRadios1" value = "Series">
 Series
 </label>
+
 <label class = "radio inline">
-<input type = "radio" name = "optionsRadios" id = "optionsRadios2" value = "option2">
+<input type = "radio" ng-model = "course.type" name = "optionsRadios" id = "optionsRadios2" value = "Course">
 Course
 </label>
 </div>
@@ -191,6 +191,22 @@ Course
 <button class = "btn btn-danger" type = "button" ng-click = "clickCancel()">Cancel</button>
 </p>
 </div>
-</body>
+
+
+
+<!--
+<div>
+Name: <input type = "text "name = "name" ng-model = "friend.name" />
+Lives: <input type = "text" name = "lives" ng-model = "friend.lives" />
+
+<button type = "button" ng-click = "add()">Save</button>
+
+<ul ng-repeat = "friend in friends">
+  <li>
+{{friend.name}} {{friend.lives}}
+</li>
+</ul>
 </div>
+-->
+
 </form>

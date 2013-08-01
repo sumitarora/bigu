@@ -8,9 +8,20 @@ $scope.clickAdd = function(){
 	$scope.showGrid = false;
 };
 
+$scope.defaultValuesFunction(){
+	$scope.course = {type: 'Series', viewCount:'1200', rating: '4.9'};
+};
+
+$scope.courses = [];
+
+$scope.defaultValuesFunction();
+
 $scope.clickSave = function(){
 	$log.info("Save Working");
 	$scope.showGrid = true;
+	$log.info($scope.course);
+	$scope.courses.push($scope.course);
+	$scope.defaultValuesFunction();
 };
 
 $scope.clickCancel = function(){
@@ -18,14 +29,16 @@ $scope.clickCancel = function(){
 	$scope.showGrid = true;
 };
 
-$scope.courses = [
-{title:'T1',category:'C1', website: 'W1', type: 'Type1', viewCount: 'VC1', rating: 'R1'},
-{title:'T2',category:'C2', website: 'W2', type: 'Type2', viewCount: 'VC2', rating: 'R2'}
-];
+/*
+$scope.friends = [];
 
-$scope.addCourse = function(){
-	$log.info("Add Course Working");
-	$scope.courses.push({title:'Title',category:'Category', website: 'Website', type: 'Type', viewCount: 'View Count', rating: 'Rating'});
-};
+$scope.friend = {};
+
+$scope.add = function(){
+	$log.info($scope.friend);
+	$scope.friends.push($scope.friend);
+	$scope.friend = {};
+};*/
+
 
 });
