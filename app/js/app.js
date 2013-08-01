@@ -20,10 +20,10 @@ angular.module('bigu', ['bigu.filters', 'bigu.services', 'bigu.directives', 'big
           }
       );
 
-       $routeProvider.when("/SecondForm",
+       $routeProvider.when("/SecondFormClick",
           {
             templateUrl: 'partials/second.html',
-            controller:  'SecondCtrl'
+            controller:  'SecondFormCtrl'
           }
       );
       
