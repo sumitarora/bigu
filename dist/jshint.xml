@@ -18,6 +18,8 @@
 	<file name="src/js/controllers/first_controller.js">
 		<error line="1" column="0" severity="warning" message="Unused variable: &apos;$scope&apos;" source="jshint.implied-unuseds" />
 	</file>
+	<file name="src/js/controllers/from_controller.js">
+	</file>
 	<file name="src/js/controllers/grid_controller.js">
 	</file>
 	<file name="src/js/controllers/hello_controller.js">
