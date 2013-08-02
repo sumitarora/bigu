@@ -1,8 +1,28 @@
+<div ng-show="showGrid">
+  <a class="btn" ng-click="addClicked()">Add</a>
+  <table>
+  <tr ng-repeat="f in friends">
+    <td>
+      {{f.name}}
+    </td>
+    <td>
+      {{f.lives}}
+    </td> 
+    <td>
+      <a class="btn" ng-click="editClicked(f)">Edit</a>
+      <a class="btn" ng-click="deleteClicked(f)">Delete</a>
+    </td> 
+  </tr>
+  </table>  
+</div>
+<div ng-show="!showGrid">
+  <form ng-submit="saveData()">
+  <input type="text" ng-model="friend.name" placeholder="Name" ng-required="true">
+  <input type="text" ng-model="friend.lives" placeholder="Lives" ng-required="true">
+  <br>
+  <button>Save</button>
+  <a ng-click="cancelClicked()" class="btn">Cancel</a>
+  </form>  
+</div>
 
-<h1>{{sample}}</h1>
-<br>
-hi!!!!!!!
 
-<br>
-<h1>{{name}}</h1>
-<button ng-click="btnclicked()">Click Me</button>

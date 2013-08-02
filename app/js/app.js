@@ -34,7 +34,12 @@ angular.module('bigu', ['bigu.filters', 'bigu.services', 'bigu.directives', 'big
           }
       );
 
-      
+      $routeProvider.when("/sample",
+          {
+            templateUrl: 'partials/sample.html',
+            controller:  'SampleCtrl'
+          }
+      );      
 
     }]);
 

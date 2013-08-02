@@ -1,16 +1,45 @@
 angular.module('bigu.controllers').controller('SampleCtrl', function ($scope, $log) {
 
-  /*
-  This is the syntax to create the new controllers. 
-  They must be created within this folder only.
-  If you have any error you must check the log by pressing F12.
-  */
   $log.info("Sample controller instantiated.");
-  $scope.sample = "Sample text goes here";
-  $scope.name = "sumit master mind";
+  $scope.showGrid = true;
 
-  $scope.btnclicked = function() {
-    $scope.sample = "You clicked the button" + (new Date()).toTimeString();
+  $scope.friends = [
+    {name:'Gulabo', lives:'Canada'},
+    {name:'Bilo', lives:'India'}
+  ];
+  $scope.friend = {};
+  $scope.editIndex = -1;
+
+  $scope.addClicked = function() {
+    $scope.showGrid = false;
+    $scope.editIndex = -1;
+  };
+
+  $scope.cancelClicked = function() {
+    $scope.showGrid = true;
+  };
+
+  $scope.saveData = function(form) {
+    if($scope.editIndex === -1){
+      $scope.friends.push($scope.friend);
+    }else{
+      $scope.friends[$scope.editIndex].name = $scope.friend.name;
+      $scope.friends[$scope.editIndex].lives = $scope.friend.lives;
+    }
+
+    $scope.friend = {};
+    $scope.cancelClicked();
+  };
+
+  $scope.editClicked = function(friend) {
+    $scope.friend = angular.copy(friend);
+    $scope.editIndex = $scope.friends.indexOf(friend);
+    $scope.showGrid = false;
+  };
+
+  $scope.deleteClicked = function(friend) {
+    var index = $scope.friends.indexOf(friend);
+    $scope.friends.splice(index, 1);
   };
 
 });

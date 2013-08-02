@@ -8,10 +8,10 @@
 	<file name="src/js/controllers/categories_controller.js">
 		<error line="1" column="0" severity="warning" message="Unused variable: &apos;$scope&apos;" source="jshint.implied-unuseds" />
 	</file>
+	<file name="src/js/controllers/course_series_controller.js">
+	</file>
 	<file name="src/js/controllers/courseseries_controller.js">
 	</file>
-<<<<<<< HEAD
-=======
 	<file name="src/js/controllers/detail_controller.js">
 		<error line="1" column="0" severity="warning" message="Unused variable: &apos;$scope&apos;" source="jshint.implied-unuseds" />
 	</file>
@@ -25,8 +25,8 @@
 	<file name="src/js/controllers/hello_controller.js">
 		<error line="1" column="0" severity="warning" message="Unused variable: &apos;$scope&apos;" source="jshint.implied-unuseds" />
 	</file>
->>>>>>> a8945afd68d955f2b94635f20bcd8d7f59e6a9fa
 	<file name="src/js/controllers/sample_controller.js">
+		<error line="22" column="0" severity="warning" message="Unused variable: &apos;form&apos;" source="jshint.implied-unuseds" />
 	</file>
 	<file name="src/js/controllers/second_controller.js">
 		<error line="1" column="0" severity="warning" message="Unused variable: &apos;$scope&apos;" source="jshint.implied-unuseds" />
@@ -45,7 +45,11 @@
 	</file>
 	<file name="app/js/controllers.js">
 		<error line="1" column="0" severity="warning" message="Unused variable: &apos;$scope&apos;" source="jshint.implied-unuseds" />
-		<error line="65" column="0" severity="warning" message="Unused variable: &apos;$scope&apos;" source="jshint.implied-unuseds" />
+		<error line="68" column="0" severity="warning" message="Unused variable: &apos;$scope&apos;" source="jshint.implied-unuseds" />
+		<error line="76" column="0" severity="warning" message="Unused variable: &apos;$scope&apos;" source="jshint.implied-unuseds" />
+		<error line="112" column="0" severity="warning" message="Unused variable: &apos;$scope&apos;" source="jshint.implied-unuseds" />
+		<error line="141" column="0" severity="warning" message="Unused variable: &apos;form&apos;" source="jshint.implied-unuseds" />
+		<error line="164" column="0" severity="warning" message="Unused variable: &apos;$scope&apos;" source="jshint.implied-unuseds" />
 	</file>
 	<file name="app/js/directives.js">
 		<error line="8" column="0" severity="warning" message="Unused variable: &apos;attrs&apos;" source="jshint.implied-unuseds" />
