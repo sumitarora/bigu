@@ -36,8 +36,8 @@
 <td>{{course.viewCount}}</td>
 <td>{{course.rating}}</td>
 <td>
-<button class = "btn btn-inverse btn-small">Edit</button>
-<button class = "btn btn-danger btn-small">Delete</button>
+<button class = "btn btn-inverse btn-small" ng-click = "clickEdit(course)">Edit</button>
+<button class = "btn btn-danger btn-small" ng-click = "clickDelete(course)">Delete</button>
 </td>
 </tr>
 
@@ -194,19 +194,20 @@ Course
 
 
 
-<!--
+
 <div>
 Name: <input type = "text "name = "name" ng-model = "friend.name" />
 Lives: <input type = "text" name = "lives" ng-model = "friend.lives" />
+<a class="btn" ng-click="editClicked(friend)">Edit</a>
+<a class="btn" ng-click="deleteClicked(friend)">Delete</a>
 
 <button type = "button" ng-click = "add()">Save</button>
 
 <ul ng-repeat = "friend in friends">
   <li>
-{{friend.name}} {{friend.lives}}
+[{{$index + 1}}] {{friend.name}} {{friend.lives}}
 </li>
 </ul>
 </div>
--->
 
 </form>
