@@ -1,11 +1,10 @@
-<h3><b>Categories</b></h3>
-<form class="form-horizontal">
+<h3><b>Categories</b></h3><br><br>
+<a ng-click="addClicked()" class="btn btn-primary">Add</a>
 <div ng-show="showGrid">
   --grid html--
-</div ng-show="!showGrid">
-<div>
-  --form html--
 </div>
+<div ng-show="!showGrid">
+  <form class="form-horizontal">
 
   <div class="control-group">
     <label class="control-label" for="Name">Name</label>
@@ -56,11 +55,13 @@
   <div class="control-group">
   <div class="controls">
   <button class="btn btn-success" button-align="center">
-  	Save
+    Save
   </button>
-  <button class="btn btn-danger" button-align="center">
-  	cancel
+  <button class="btn btn-danger" button-align="center" ng-click="cancelClicked()">
+    Cancel
   </button>
   </div>
   </div>
   </form>
+</div>
+
