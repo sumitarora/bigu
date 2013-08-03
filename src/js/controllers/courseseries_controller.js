@@ -1,7 +1,9 @@
 angular.module('bigu.controllers').controller('CourseSeriesCtrl', function ($scope, $log) {
 
 $log.info("Course Series Controller");
+
 $scope.showGrid = true;
+$scope.courses = [];
 
 $scope.clickAdd = function(){
 	$log.info("Added");
@@ -22,27 +24,23 @@ $scope.clickDelete = function(course){
 	$scope.courses.splice(index,1);
 };
 
-
 $scope.defaultValuesFunction =function(){
 	$scope.course = {type: 'Series', viewCount:'1200', rating: '4.9'};
+	$scope.showGrid = false;
 };
-
-$scope.courses = [];
-
-$scope.defaultValuesFunction();
 
 $scope.clickSave = function(){
 	$log.info("Save Working");
-	$scope.showGrid = true;
-	$log.info($scope.course);
+	$log.info($scope.course, $scope.index);
+
 	if($scope.index > -1){
-		$scope.defaultValuesFunction();
-		$log.info($scope.course);
+		$scope.courses[$scope.index] = $scope.course;
 		$scope.index = -1;
 	}
 	else{
 			$scope.courses.push($scope.course);
 	}
+	$scope.showGrid = true;
 };
 
 $scope.clickCancel = function(){
