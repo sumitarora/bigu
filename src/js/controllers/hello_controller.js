@@ -3,7 +3,7 @@ angular.module('bigu.controllers').controller('HelloCtrl', function ($scope, $lo
 	
 
 
-$log.info("controller");
+$log.info(" new controller");
 
   
   $scope.friends = [
@@ -13,6 +13,8 @@ $log.info("controller");
 
 $scope.Click = function(){
 	$scope.friends.push({name:'XYZ', lives:'Lives'});
+
+
 
 };
   

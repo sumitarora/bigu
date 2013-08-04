@@ -1,7 +1,28 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+</head>
+<body>
 <h1>Hello dear....</h1>
-<a ng-click="Click()" class="btn btn-primary">AddNew</a>
-<ul>
-  <li ng-repeat="f in friends">
-    [{{$index + 1}}] {{f.name}} who lives in {{f.lives}}.
-  </li>
-</ul>
+<form>
+	<div>
+		<label for="InputName">Name</label>
+		<input type="text" class="form-control" id="InputName" placeholder="Enter name ">
+
+	</div>
+		<div>
+		 <label for="InputPlace">lives</label>
+		 <input type="text" class="form-control" id="InputPlace" placeholder="Enter Place">
+
+		</div>
+         <a ng-click="Click()" class="btn btn-primary">AddNew</a>
+          <ul>
+           <li ng-repeat="f in friends">
+             [{{$index + 1}}] {{f.name}} who lives in {{f.lives}}.
+           </li>
+          </ul>
+
+</form>
+
+</body>
+</html>
