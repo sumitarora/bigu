@@ -3,20 +3,16 @@ angular.module('bigu.controllers').controller('HelloCtrl', function ($scope, $lo
 	
 
 
-$log.info(" new controller");
-
-  
-  $scope.friends = [
-     { name:'Gulabo', lives:'Canada'},
-       {name:'Bilo', lives:'India'}];
-
+$log.info(" This is new controller ");
+$scope.friends = [];
+$scope.friend = {};
 
 $scope.Click = function(){
-	$scope.friends.push({name:'XYZ', lives:'Lives'});
-
+	$log.info($scope.friend);
+	$scope.friends.push($scope.friend);
+	$scope.friend = {};
 
 
 };
   
-
-});
+  });

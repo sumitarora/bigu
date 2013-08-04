@@ -1,28 +1,20 @@
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-</head>
-<body>
-<h1>Hello dear....</h1>
-<form>
+
+<h4>Hello dear Enter your detail....</h4>
 	<div>
 		<label for="InputName">Name</label>
-		<input type="text" class="form-control" id="InputName" placeholder="Enter name ">
+		<input type="text" class="form-control" id="InputName" placeholder="Enter name " ng-model = "friend.name" >
 
 	</div>
 		<div>
 		 <label for="InputPlace">lives</label>
-		 <input type="text" class="form-control" id="InputPlace" placeholder="Enter Place">
+		 <input type="text" class="form-control" id="InputPlace" placeholder="Enter Place" ng-model = "friend.lives" >
 
 		</div>
+		<div>
          <a ng-click="Click()" class="btn btn-primary">AddNew</a>
           <ul>
-           <li ng-repeat="f in friends">
-             [{{$index + 1}}] {{f.name}} who lives in {{f.lives}}.
+           <li ng-repeat="friend in friends">
+             [{{$index + 1}}] {{friend.name}} who lives in {{friend.lives}}.
            </li>
           </ul>
-
-</form>
-
-</body>
-</html>
+          </div>
