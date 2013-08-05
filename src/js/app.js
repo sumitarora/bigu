@@ -41,6 +41,13 @@ angular.module('bigu', ['bigu.filters', 'bigu.services', 'bigu.directives', 'big
           }
       );      
 
+       $routeProvider.when("/New",
+          {
+            templateUrl: 'partials/hello.html',
+            controller:  'HelloCtrl'
+          }
+      );      
+
     }]);
 
 angular.module('bigu.services', ['ngResource']);

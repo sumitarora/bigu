@@ -1,5 +1,6 @@
 
 <h4>Hello dear Enter your detail....</h4>
+
 	<div>
 		<label for="InputName">Name</label>
 		<input type="text" class="form-control" id="InputName" placeholder="Enter name " ng-model = "friend.name" >
@@ -11,10 +12,15 @@
 
 		</div>
 		<div>
-         <a ng-click="Click()" class="btn btn-primary">AddNew</a>
+		 
+		<button type="button" class="btn btn-primary" ng-click="Click()">Save</button>
+		<a class="btn" ng-click="deleteClick(friend)">Delete</a>
+		<a class="btn btn-primary" ng-click="editClicked(f)">Edit</a>
+
           <ul>
            <li ng-repeat="friend in friends">
              [{{$index + 1}}] {{friend.name}} lives in {{friend.lives}}.
            </li>
-          </ul>
-          </div>
+           </ul>
+           </div>
+         
