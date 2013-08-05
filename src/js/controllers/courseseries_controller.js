@@ -5,6 +5,11 @@ $log.info("Course Series Controller");
 $scope.showGrid = true;
 $scope.courses = [];
 
+$scope.defaultValuesFunction =function(){
+	$scope.course = {type: 'Series'};
+	$scope.showGrid = false;
+};
+
 $scope.clickAdd = function(){
 	$log.info("Added");
 	$scope.showGrid = false;
@@ -22,11 +27,6 @@ $scope.clickDelete = function(course){
 	$log.info(course);
 	var index = $scope.courses.indexOf(course);
 	$scope.courses.splice(index,1);
-};
-
-$scope.defaultValuesFunction =function(){
-	$scope.course = {type: 'Series', viewCount:'1200', rating: '4.9'};
-	$scope.showGrid = false;
 };
 
 $scope.clickSave = function(){

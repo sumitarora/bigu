@@ -46,7 +46,14 @@ angular.module('bigu', ['bigu.filters', 'bigu.services', 'bigu.directives', 'big
             templateUrl: 'partials/hello.html',
             controller:  'HelloCtrl'
           }
-      );      
+      ); 
+
+      $routeProvider.when("/Videos",
+          {
+            templateUrl: 'partials/videos.html',
+            controller:  'VideosCtrl'
+          }
+      );     
 
     }]);
 
