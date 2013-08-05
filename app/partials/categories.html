@@ -15,20 +15,21 @@
 
 <table class="table table-bordered table-hover table-condensed">
 <tr>
-  <td><b>
-    Title</b>
-  </td>
-  <td><b>
-    Parent</b>
-  </td>
+  <td><b>Name</b></td>
+  <td><b> Parent</b></td>
   <td><b>Type</b></td>
    <td><b>Action</b></td>
 </tr>
+<tr ng-repeat="cat in categories">
+<td>{{cat.parent}}</td>
+<td>{{cat.title}}</td>
+<td>{{cat.type}}</td>
 
-<tr ng-repeat="c in categories">
-<td>{{c.name}}</td>
-<td>{{c.title}}</td>
+<td><a class = "btn btn-inverse btn-small" ng-click="editClicked(cat)">Edit</a>
+<a class = "btn btn-danger btn-small" ng-click="deleteClicked(cat)">Delete</a></td>
 </tr>
+
+</table>
 </table>
 
 
@@ -38,57 +39,58 @@
 </form>
 </div>
 <div ng-show="!showGrid">
-  <form class="form-horizontal">
+
+  <form class="form-horizontal" ng-submit="saveClicked()">
 
   <div class="control-group">
     <label class="control-label" for="Name">Name</label>
-
-    <div class="controls">
-      <input type="text" id="Name" placeholder="text">
+     <div class="controls">
+      <input type="text" id="Name" placeholder="text" ng-model="category.name" ng-required="true">
     </div>
   </div>
 
   <div class="control-group">
     <label class="control-label" for="Description">Description</label>
-
     <div class="controls">
-      <input type="text" id="Description" placeholder="text">
+      <input type="text" id="Description" placeholder="text" ng-model="category.title" ng-required="true">
     </div>
   </div>
+
+  
 
     <div class="control-group">
       <label class="control-label" for="Parent">Parent</label>
       <div class="controls">
-       <select >
+       <select ng-model="category.parent">
     <option>Text Goes Here</option>
-  <option>1</option>
-  <option>2</option>
-  <option>3</option>
-  <option>4</option>
-  <option>5</option>
-  <option>6</option>
-  <option>7</option>
-</select>
+  <option>Programming Language</option>
+  <option>Programming</option>
+  <option>Java Programming</option>
+  <option>PHP Programming</option>
+  <option>Asp.net Programming</option>
+  <option>cobol</option>
+  <option>Basic</option>
+  </select>
     </div>
     </div>
 
     
     <div class="control-group">
       <label class="control-label" for="Type">Type</label>
-      <div class="controls"><select >
+      <div class="controls"><select ng-model="category.type">
     <option>Text Goes Here</option>
-  <option>1</option>
-  <option>2</option>
-  <option>3</option>
-  <option>4</option>
-  <option>5</option>
+  <option>Main</option>
+  <option>Website</option>
+  <option>Main2</option>
+  <option>web</option>
+  <option>Main3</option>
 </select>
  <label>Type has option as Main/Website</label>
     </div>
 </div>
   <div class="control-group">
   <div class="controls">
-  <button class="btn btn-success" button-align="center" ng-click="addClicked()">
+  <button class="btn btn-success" button-align="center" >
     Save
   </button>
   <a class="btn btn-danger" button-align="center" ng-click="cancelClicked()">
