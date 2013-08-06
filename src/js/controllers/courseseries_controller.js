@@ -5,7 +5,7 @@ $log.info("Course Series Controller");
 $scope.showGrid = true;
 $scope.courses = [];
 
-$scope.defaultValuesFunction =function(){
+$scope.defaultValuesFunction = function(){
 	$scope.course = {type: 'Series'};
 	$scope.showGrid = false;
 };
@@ -49,6 +49,8 @@ $scope.clickCancel = function(){
 };
 
 
+//friends
+
 $scope.friends = [];
 
 $scope.friend = {};
@@ -72,6 +74,7 @@ $scope.editClicked = function(friend) {
 	friend.name = $scope.friend.name;
 	friend.lives = $scope.friend.lives;
   };
+  //ends here
 
 
 
