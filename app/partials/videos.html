@@ -48,7 +48,7 @@
 <dic ng-show = "!showGrid">
 <h3>Videos</h3>
 
-<form class = "form-horizontal">
+<form class = "form-horizontal" ng-submit = "clickSave()">
 
 <div class = "control-group">
 <label class = "control-label" for = "inputId">ID</label>
@@ -60,7 +60,7 @@
 <div class = "control-group">
 <label class = "control-label" for = "inputTitle">Title</label>
 <div class = "controls">
-<input type = "text" id = "inputTitle" ng-model = "video.title" />
+<input type = "text" id = "inputTitle" ng-model = "video.title" required />
 </div>
 </div>
 
@@ -87,7 +87,7 @@
 <div class = "control-group">
 <label class = "control-label" for = "inputWebsite">Website</label>
 <div class = "controls">
-<select ng-model = "video.website">
+<select ng-model = "video.website" required>
 <option>Website 1</option>
 <option>Website 2</option>
 <option>Website 3</option>
@@ -121,7 +121,7 @@
 <div class = "control-group">
 <label class = "control-label" for = "inputURL">URL</label>
 <div class = "controls">
-<input type = "text" id = "inputURL" ng-model = "video.url"/>
+<input type = "text" id = "inputURL" ng-model = "video.url" required/>
 </div>
 </div>
 
