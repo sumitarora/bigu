@@ -8,7 +8,7 @@
 <select>
 <option>Search by</option>
 </select>
-<input type = "text" />
+<input type = "text" ng-model = "searchText" />
 <button class = "btn btn-inverse" type = "button">Search</button>
 </div>
 <div class = "pull-left">
@@ -29,7 +29,7 @@
 </thead>
 
 <tbody>
-<tr ng-repeat = "video in videos">
+<tr ng-repeat = "video in videos | filter:searchText">
 <td>{{video.title}}</td>
 <td>{{video.description}}</td>
 <td>{{video.website}}</td>
@@ -48,7 +48,7 @@
 <dic ng-show = "!showGrid">
 <h3>Videos</h3>
 
-<form class = "form-horizontal" ng-submit = "clickSave()">
+<form class = "form-horizontal">
 
 <div class = "control-group">
 <label class = "control-label" for = "inputId">ID</label>
@@ -60,7 +60,7 @@
 <div class = "control-group">
 <label class = "control-label" for = "inputTitle">Title</label>
 <div class = "controls">
-<input type = "text" id = "inputTitle" ng-model = "video.title" required />
+<input type = "text" id = "inputTitle" ng-model = "video.title" />
 </div>
 </div>
 
@@ -87,7 +87,7 @@
 <div class = "control-group">
 <label class = "control-label" for = "inputWebsite">Website</label>
 <div class = "controls">
-<select ng-model = "video.website" required>
+<select ng-model = "video.website">
 <option>Website 1</option>
 <option>Website 2</option>
 <option>Website 3</option>
@@ -121,7 +121,7 @@
 <div class = "control-group">
 <label class = "control-label" for = "inputURL">URL</label>
 <div class = "controls">
-<input type = "text" id = "inputURL" ng-model = "video.url" required/>
+<input type = "text" id = "inputURL" ng-model = "video.url" />
 </div>
 </div>
 
