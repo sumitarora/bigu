@@ -1,28 +1,154 @@
-<h3><b>Enter User Detail ......</b></h3><br><br>
+<h3><b>User Detail Grid ......</b></h3><br><br>
+<a ng-click="addClicked()" class="btn btn-primary">Add Detail</a>
+<div ng-show="showGrid">
+ <h3>Detail Here..</h3>
 
+<form class = "form-horizontal">
+<div class="control-group pull-right">
+<select >
+<option>Search by</option>
+</select>
+<input type="text text-large" placeholder = "text">
+<button class="btn btn-inverse" type="button" class="btn">Search</button>
+</div>
+ <br/>
+
+<table class="table table-bordered table-hover table-condensed">
+<tr>
+  <td><b>Email</b></td>
+  <td><b>First Name</b></td>
+  <td><b>Last Name</b></td>
+  <td><b>Country</b></td>
+   <td><b>Profession</b></td>
+</tr>
+<tr ng-repeat="use in user">
+<td>{{use.Email}}</td>
+<td>{{use.FirstName}}</td>
+<td>{{use.LastName}}</td>
+<td>{{use.Country}}</td>
+<td>{{use.Profession}}</td>
+
+
+
+</tr>
+
+</table>
+</table>
+
+
+   
+  </div>
+</div>
+</form>
+</div>
+
+
+<div ng-show="!showGrid">
+<h3><b>Enter User Detail ......</b></h3><br><br>
 <form class="form-horizontal">
 <div class="control-group">
 
-	<label for="userInputId" class="control-label"><b>User Id</b></label>
+	<label for="userInputId" class="control-label"><b>User Id  </b></label>
+	<div class = "controls">
 	<input type="text" class="form-control" id="userInputId" placeholder="Enter userId">
-	
+	</div>
 </div>
 <div class="control-group">
       <label for="exampleInputEmail" class="control-label"><b>Email address</b></label>
+      <div class = "controls">
       <input type="text" class="form-control" id="exampleInputEmail" placeholder="Enter email">
+    </div>
     </div>
     <div class="control-group">
       <label for="exampleInputPassword" class="control-label"><b>Password</b></label>
+      <div class = "controls">
       <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
+    </div>
     </div>
 
     <div class="control-group">
       <label for="Inputfname" class="control-label"><b>First Name</b></label>
+      <div class = "controls">
       <input type="text" class="form-control" id="Inputfname" placeholder="First Name">
+    </div>
     </div>
 
     <div class="control-group">
       <label for="Inputlname" class="control-label"><b>Last Name</b></label>
+      <div class = "controls">
       <input type="text" class="form-control" id="Inputlname" placeholder="Last Name">
     </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label" for="InputCountry"><b>Country</b></label>
+      <div class="controls">
+      <select>
+    <option>Select Country</option>
+  <option>Asia</option>
+  <option>America</option>
+  <option>Newzealand</option>
+  <option>UK</option>
+  <option>Canada</option>
+  <option>chaina</option>
+  <option>Newyork</option>
+  <option>Korea</option>
+</select>
+    </div>
+</div>
+
+<div class="control-group">
+	<label class="control-label" for="InputProfession"><b>Profession</b></label>
+	<div class="controls">
+	<select>
+		<option>Select Profession</option>
+		<option>Student</option>
+		<option>Worker</option>
+		<option>Part time worker</option>
+		<option>other</option>
+	</select>
+	</div>
+		</div><br>
+
+		<div class="control-group">
+		<label for="InputFacebookId" class="control-label"><b>Facebook</b></label>
+		<div class="controls">
+			<input type="text" class="form-control" id="InputFB" placeholder="Facebook" />
+			
+		</div>
+			
+		</div>
+
+		<div class="control-group">
+		<label for="Inputtwitter" class="control-label"><b>Twitter</b></label>
+		<div class="controls">
+			<input type="text" class="form-control" id="Inputtwitter" placeholder="Twitter" />
+			
+		</div>
+			
+		</div>
+
+		<div class="control-group">
+		<label for="Inputlinkedin" class="control-label"><b>Linkedin</b></label>
+		<div class="controls">
+			<input type="text" class="form-control" id="Inputlinkedin" placeholder="Linkedin" />
+			
+		</div>
+			
+		</div><br>
+		<div class="control-group">
+  <div class="controls">
+  <button class="btn btn-success" button-align="center" ><b>
+    Save </b>
+  </button>
+  <a class="btn btn-danger" button-align="center" ng-click="cancelClicked()">
+  <b> Cancel </b>
+  </a>
+  
+  </div>
+  </div>
+  
+	
+
 </form>
+</div>
