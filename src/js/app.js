@@ -48,6 +48,14 @@ angular.module('bigu', ['bigu.filters', 'bigu.services', 'bigu.directives', 'big
           }
       ); 
 
+       $routeProvider.when("/Newfile",
+          {
+            templateUrl: 'partials/user.html',
+            controller:  'UserCtrl'
+          }
+      );     
+
+
       $routeProvider.when("/Videos",
           {
             templateUrl: 'partials/videos.html',
