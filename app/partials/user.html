@@ -1,5 +1,50 @@
+<h3><b>User Detail Grid ......</b></h3><br><br>
+<a ng-click="addClicked()" class="btn btn-primary">Add Detail</a>
+<div ng-show="showGrid">
+ <h3>Detail Here..</h3>
+
+<form class = "form-horizontal">
+<div class="control-group pull-right">
+<select >
+<option>Search by</option>
+</select>
+<input type="text text-large" placeholder = "text">
+<button class="btn btn-inverse" type="button" class="btn">Search</button>
+</div>
+ <br/>
+
+<table class="table table-bordered table-hover table-condensed">
+<tr>
+  <td><b>Email</b></td>
+  <td><b>First Name</b></td>
+  <td><b>Last Name</b></td>
+  <td><b>Country</b></td>
+   <td><b>Profession</b></td>
+</tr>
+<tr ng-repeat="use in user">
+<td>{{use.Email}}</td>
+<td>{{use.FirstName}}</td>
+<td>{{use.LastName}}</td>
+<td>{{use.Country}}</td>
+<td>{{use.Profession}}</td>
+
+
+
+</tr>
+
+</table>
+</table>
+
+
+   
+  </div>
+</div>
+</form>
+</div>
+
+
+<div ng-show="!showGrid">
 <h3><b>Enter User Detail ......</b></h3><br><br>
-<div>
 <form class="form-horizontal">
 <div class="control-group">
 
