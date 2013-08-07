@@ -25,7 +25,7 @@ $log.info(" This is User controller ");
 
 	};
 	$scope.saveClicked = function(){
-		$log.info("Add new detail")
+		$log.info("Add new detail");
 		if($scope.index > -1){
 			$scope.users[$scope.index] = $scope.duser;
 			$scope.index = -1;
