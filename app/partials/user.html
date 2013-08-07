@@ -21,6 +21,7 @@
   <td><b>Country</b></td>
    <td><b>Profession</b></td>
    <td><b>Facebook</b></td>
+   <td><b>Twitter</b></td>
 </tr>
 <tr ng-repeat="use in users">
 <td>{{use.email}}</td>
@@ -29,8 +30,10 @@
 <td>{{use.country}}</td>
 <td>{{use.profession}}</td>
 <td>{{use.facebook}}</td>
+<td>{{use.twitter}}</td>
 
-
+<td><a class = "btn btn-inverse btn-small" ng-click="editClicked(use)">Edit</a>
+<a class = "btn btn-danger btn-small" ng-click="deleteClicked(use)">Delete</a></td>
 
 </tr>
 
@@ -52,40 +55,40 @@
 
 	<label for="userInputId" class="control-label"><b>User Id  </b></label>
 	<div class = "controls">
-	<input type="text" class="form-control" id="userInputId" placeholder="Enter userId" >
+	<input type="text" class="form-control" id="userInputId" placeholder="Enter userId" ng-required="true">
 	</div>
 </div>
 <div class="control-group">
       <label for="exampleInputEmail" class="control-label"><b>Email address</b></label>
       <div class = "controls">
-      <input type="text" class="form-control" id="exampleInputEmail" placeholder="Enter email" ng-model="duser.email">
+      <input type="text" class="form-control" id="exampleInputEmail" placeholder="Enter email" ng-model="duser.email" ng-required="true">
     </div>
     </div>
     <div class="control-group">
       <label for="exampleInputPassword" class="control-label"><b>Password</b></label>
       <div class = "controls">
-      <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
+      <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password" ng-required="true">
     </div>
     </div>
 
     <div class="control-group">
       <label for="Inputfname" class="control-label"><b>First Name</b></label>
       <div class = "controls">
-      <input type="text" class="form-control" id="Inputfname" placeholder="First Name" ng-model="duser.FName">
+      <input type="text" class="form-control" id="Inputfname" placeholder="First Name" ng-model="duser.FName" ng-required="true">
     </div>
     </div>
 
     <div class="control-group">
       <label for="Inputlname" class="control-label"><b>Last Name</b></label>
       <div class = "controls">
-      <input type="text" class="form-control" id="Inputlname" placeholder="Last Name" ng-model="duser.LName">
+      <input type="text" class="form-control" id="Inputlname" placeholder="Last Name" ng-model="duser.LName" ng-required="true">
     </div>
     </div>
 
     <div class="control-group">
       <label class="control-label" for="InputCountry"><b>Country</b></label>
       <div class="controls">
-      <select ng-model="duser.country">
+      <select ng-model="duser.country" ng-required="true">
     <option>Select Country</option>
   <option>Asia</option>
   <option>America</option>
@@ -102,7 +105,7 @@
 <div class="control-group">
 	<label class="control-label" for="InputProfession"><b>Profession</b></label>
 	<div class="controls">
-	<select ng-model="duser.profession">
+	<select ng-model="duser.profession" ng-required="true">
 		<option>Select Profession</option>
 		<option>Student</option>
 		<option>Worker</option>
@@ -115,7 +118,7 @@
 		<div class="control-group">
 		<label for="InputFacebookId" class="control-label"><b>Facebook</b></label>
 		<div class="controls">
-			<input type="text" class="form-control" id="InputFB" placeholder="Facebook" ng-model="duser.facebook" />
+			<input type="text" class="form-control" id="InputFB" placeholder="Facebook" ng-model="duser.facebook" ng-required="true"/>
 			
 		</div>
 			
@@ -124,7 +127,7 @@
 		<div class="control-group">
 		<label for="Inputtwitter" class="control-label"><b>Twitter</b></label>
 		<div class="controls">
-			<input type="text" class="form-control" id="Inputtwitter" placeholder="Twitter" ng-model="duser.twitter" />
+			<input type="text" class="form-control" id="Inputtwitter" placeholder="Twitter" ng-model="duser.twitter" ng-required="true"/>
 			
 		</div>
 			
@@ -133,7 +136,7 @@
 		<div class="control-group">
 		<label for="Inputlinkedin" class="control-label"><b>Linkedin</b></label>
 		<div class="controls">
-			<input type="text" class="form-control" id="Inputlinkedin" placeholder="Linkedin" ng-model="duser.linkedin"/>
+			<input type="text" class="form-control" id="Inputlinkedin" placeholder="Linkedin" ng-model="duser.linkedin" ng-required="true"/>
 			
 		</div>
 			
