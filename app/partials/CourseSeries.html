@@ -1,19 +1,22 @@
 <div ng-show = "showGrid">
-<h3> Course/Series </h3>
+<h3>Course/Series</h3>
 
 <div class="control-group pull-right">
 <form class = "form-horizontal">
-<select >
-<option>Search by</option>
+
+<select>
+<option>Search By</option>
 </select>
-<input type="text text-large" placeholder="text">
+<input type="text" ng-model = "searchText">
 <button class = "btn btn-inverse" type = "button">Search</button>
 </div>
 <div class = "pull-left">
 <button class = "btn btn-primary" ng-click = "clickAdd()">Add <i class = "icon-plus"></i></button>
 </div>
+
 </form>
 <br/>
+
 <table class = "table table-bordered table-hover table-condensed">
 <thead>
 <tr>
@@ -28,7 +31,7 @@
 </thead>
 
 <tbody>
-<tr ng-repeat = "course in courses">
+<tr ng-repeat = "course in courses | filter:searchText">
 <td>{{course.title}}</td>
 <td>{{course.category}}</td>
 <td>{{course.website}}</td>
@@ -40,8 +43,8 @@
 <button class = "btn btn-danger btn-small" ng-click = "clickDelete(course)">Delete</button>
 </td>
 </tr>
-
 </tbody>
+
 </table>
 
 <div class="pagination pagination-centered">
@@ -49,10 +52,10 @@
     <li class="disabled"><a href="#">Prev</a></li>
     <li class="active"><a href="#">1</a></li>
     <li class="disabled"><a href="#">2</a></li>
-	<li class="disabled"><a href="#">3</a></li>
-	<li class="disabled"><a href="#">4</a></li>
-	<li class="disabled"><a href="#">5</a></li>
-	<li class="disabled"><a href="#">Next</a></li>
+	 <li class="disabled"><a href="#">3</a></li>
+	 <li class="disabled"><a href="#">4</a></li>
+	 <li class="disabled"><a href="#">5</a></li>
+	 <li class="disabled"><a href="#">Next</a></li>
   </ul>
 </div>
 </div>
@@ -72,7 +75,7 @@
 <div class = "control-group">
 <label class = "control-label" for = "inputTitle">Title</label>
 <div class = "controls">
-<input type = "text" id="inputTitle" placeholder = "text" ng-model="course.title" required/>
+<input type = "text" id="inputTitle" ng-model="course.title" required/>
 </div>
 </div>
 
@@ -80,7 +83,7 @@
 <div class = "control-group">
 <label class = "control-label" for = "inputDescription">Description</label>
 <div class = "controls">
-<input type = "text" id = "inputDescription" placeholder = "text" ng-required=true>
+<input type = "text" id = "inputDescription" ng-required=true>
 </div>
 </div>
 
@@ -97,7 +100,6 @@
 </div>
 </div>
 
-
 <div class = "control-group">
 <label class = "control-label" for = "inputWebsite">Website</label>
 <div class = "controls">
@@ -111,32 +113,31 @@
 </div>
 </div>
 
-
 <div class = "control-group">
 <label class = "control-label" for = "inputDuration">Duration</label>
 <div class = "controls">
-<input type = "text" id = "inputDuration" placeholder = "text">
+<input type = "text" id = "inputDuration" />
 </div>
 </div>
 
 <div class = "control-group">
 <label class = "control-label" for = "inputRating">Rating</label>
 <div class = "controls">
-<input type = "text" id = "inputRating" placeholder = "text" ng-model = "course.rating" />
+<input type = "text" id = "inputRating" ng-model = "course.rating" />
 </div>
 </div>
 
 <div class = "control-group">
 <label class = "control-label" for = "inputCount">View Count</label>
 <div class = "controls">
-<input type = "text" id = "inputCount" placeholder = "text" ng-model = "course.count" />
+<input type = "text" id = "inputCount" ng-model = "course.count" />
 </div>
 </div>
 
 <div class = "control-group">
 <label class = "control-label" for = "inputURL">URL</label>
 <div class = "controls">
-<input type = "text" id = "inputURL" placeholder = "text">
+<input type = "text" id = "inputURL" />
 </div>
 </div>
 
@@ -165,9 +166,10 @@ Course
 
 
 
+<!-- Friends sample -->
 
 <div>
-Name: <input type = "text "name = "name" ng-model = "friend.name" />
+Name: <input type = "text" name = "name" ng-model = "friend.name" />
 Lives: <input type = "text" name = "lives" ng-model = "friend.lives" />
 <a class="btn" ng-click="editClicked(friend)">Edit</a>
 <a class="btn" ng-click="deleteClicked(friend)">Delete</a>
@@ -180,5 +182,3 @@ Lives: <input type = "text" name = "lives" ng-model = "friend.lives" />
 </li>
 </ul>
 </div>
-
-

@@ -1,3 +1,51 @@
+<div ng-show = "showGrid">
+
+<h3>Videos</h3>
+
+<div class = "control-group pull-right">
+<form class = "form-horizontal">
+
+<select>
+<option>Search by</option>
+</select>
+<input type = "text" ng-model = "searchText" />
+<button class = "btn btn-inverse" type = "button">Search</button>
+</div>
+<div class = "pull-left">
+<button class = "btn btn-primary" ng-click = "clickAdd()">Add <i class = "icon-plus"></i></button>
+</div>
+</form>
+<br/>
+
+<table class = "table table-bordered table-hover table-condensed">
+<thead>
+<tr>
+<th>Title</th>
+<th>Description</th>
+<th>Website</th>
+<th>URL</th>
+<th>Actions</th>
+</tr>
+</thead>
+
+<tbody>
+<tr ng-repeat = "video in videos | filter:searchText">
+<td>{{video.title}}</td>
+<td>{{video.description}}</td>
+<td>{{video.website}}</td>
+<td>{{video.url}}</td>
+<td>
+<button class = "btn btn-inverse btn-small" ng-click = "clickEdit(video)">Edit</button>
+<button class = "btn btn-danger btn-small" ng-click = "clickDelete(video)">Delete</button>
+</td>
+</tr>
+</tbody>
+
+</table>
+
+</div>
+
+<dic ng-show = "!showGrid">
 <h3>Videos</h3>
 
 <form class = "form-horizontal">
@@ -12,14 +60,14 @@
 <div class = "control-group">
 <label class = "control-label" for = "inputTitle">Title</label>
 <div class = "controls">
-<input type = "text" id = "inputTitle" placeholder = "text" />
+<input type = "text" id = "inputTitle" ng-model = "video.title" />
 </div>
 </div>
 
 <div class = "control-group">
 <label class = "control-label" for = "inputDescription">Description</label>
 <div class = "controls">
-<input type = "text" id = "inputDescription" placeholder = "text" />
+<input type = "text" id = "inputDescription" ng-model = "video.description" />
 </div>
 </div>
 
@@ -39,7 +87,7 @@
 <div class = "control-group">
 <label class = "control-label" for = "inputWebsite">Website</label>
 <div class = "controls">
-<select>
+<select ng-model = "video.website">
 <option>Website 1</option>
 <option>Website 2</option>
 <option>Website 3</option>
@@ -52,42 +100,44 @@
 <div class = "control-group">
 <label class = "control-label" for = "inputLength">Length</label>
 <div class = "controls">
-<input type = "text" id = "inputLength" placeholder = "text" />
+<input type = "text" id = "inputLength" />
 </div>
 </div>
 
 <div class = "control-group">
 <label class = "control-label" for = "inputRating">Rating</label>
 <div class = "controls">
-<input type = "text" id = "inputRating" placeholder = "text" />
+<input type = "text" id = "inputRating" />
 </div>
 </div>
 
 <div class = "control-group">
 <label class = "control-label" for = "inputCount">View Count</label>
 <div class = "controls">
-<input type = "text" id = "inputCount" placeholder = "text" />
+<input type = "text" id = "inputCount" />
 </div>
 </div>
 
 <div class = "control-group">
 <label class = "control-label" for = "inputURL">URL</label>
 <div class = "controls">
-<input type = "text" id = "inputURL" placeholder = "text" />
+<input type = "text" id = "inputURL" ng-model = "video.url" />
 </div>
 </div>
 
 <div class = "control-group">
 <label class = "control-label" for = "inputCSID">Course/Session ID</label>
 <div class = "controls">
-<input type = "text" id = "inputCSID" placeholder = "text" />
+<input type = "text" id = "inputCSID" />
 </div>
 </div>
 
 <div class = "controls">
 <p class = "btn-center">
-<button class = "btn btn-success">Button</button>
+<button class = "btn btn-success" ng-click = "clickSave()">Save</button>
+<button class = "btn btn-danger" ng-click = "clickCancel()">Cancel</button>
 </p>
 </div>
 
 </form>
+</div>
