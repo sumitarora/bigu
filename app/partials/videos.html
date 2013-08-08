@@ -40,15 +40,16 @@
 </td>
 </tr>
 </tbody>
-
 </table>
+
+
 
 </div>
 
-<dic ng-show = "!showGrid">
+<div ng-show = "!showGrid">
 <h3>Videos</h3>
 
-<form class = "form-horizontal">
+<form class = "form-horizontal" ng-submit = "clickSave()">
 
 <div class = "control-group">
 <label class = "control-label" for = "inputId">ID</label>
@@ -60,7 +61,7 @@
 <div class = "control-group">
 <label class = "control-label" for = "inputTitle">Title</label>
 <div class = "controls">
-<input type = "text" id = "inputTitle" ng-model = "video.title" />
+<input type = "text" id = "inputTitle" ng-model = "video.title" required />
 </div>
 </div>
 
@@ -72,27 +73,15 @@
 </div>
 
 <div class = "control-group">
-<label class = "control-label" for = "inputCategory">Category</label>
-<div class = "controls">
-<select>
-<option>Course 1</option>
-<option>Course 2</option>
-<option>Course 3</option>
-<option>Course 4</option>
-<option>Course 5</option>
-</select>
-</div>
-</div>
-
-<div class = "control-group">
 <label class = "control-label" for = "inputWebsite">Website</label>
 <div class = "controls">
-<select ng-model = "video.website">
-<option>Website 1</option>
-<option>Website 2</option>
-<option>Website 3</option>
-<option>Website 4</option>
-<option>Website 5</option>
+<select ng-model = "video.website" required>
+<option value = "">Select Website</option>
+<option value = "1">Website 1</option>
+<option value = "2">Website 2</option>
+<option value = "3">Website 3</option>
+<option value = "4">Website 4</option>
+<option value = "5">Website 5</option>
 </select>
 </div>
 </div>
@@ -121,7 +110,7 @@
 <div class = "control-group">
 <label class = "control-label" for = "inputURL">URL</label>
 <div class = "controls">
-<input type = "text" id = "inputURL" ng-model = "video.url" />
+<input type = "text" id = "inputURL" ng-model = "video.url" required />
 </div>
 </div>
 
@@ -134,8 +123,8 @@
 
 <div class = "controls">
 <p class = "btn-center">
-<button class = "btn btn-success" ng-click = "clickSave()">Save</button>
-<button class = "btn btn-danger" ng-click = "clickCancel()">Cancel</button>
+<button class = "btn btn-success">Save</button>
+<a class = "btn btn-danger" ng-click = "clickCancel()">Cancel</a>
 </p>
 </div>
 
