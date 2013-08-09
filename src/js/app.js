@@ -13,42 +13,30 @@ angular.module('bigu', ['bigu.filters', 'bigu.services', 'bigu.directives', 'big
       );
       
       
-      $routeProvider.when("/Categories",
+      $routeProvider.when("/categories",
           {
             templateUrl: 'partials/categories.html',
             controller:  'CategoriesCtrl'
           }
       );
 
-       $routeProvider.when("/SecondFormClick",
-          {
-            templateUrl: 'partials/second.html',
-            controller:  'SecondFormCtrl'
-          }
-      );
       
-      $routeProvider.when("/CourseSeries",
+      $routeProvider.when("/courseSeries",
           {
-            templateUrl: 'partials/courseseries.html',
+            templateUrl: 'partials/course-series.html',
             controller:  'CourseSeriesCtrl'
           }
       );
+    
 
-      $routeProvider.when("/sample",
-          {
-            templateUrl: 'partials/sample.html',
-            controller:  'SampleCtrl'
-          }
-      );      
-
-       $routeProvider.when("/New",
+       $routeProvider.when("/new",
           {
             templateUrl: 'partials/hello.html',
             controller:  'HelloCtrl'
           }
       ); 
 
-       $routeProvider.when("/Newfile",
+       $routeProvider.when("/newFile",
           {
             templateUrl: 'partials/user.html',
             controller:  'UserCtrl'
@@ -56,7 +44,7 @@ angular.module('bigu', ['bigu.filters', 'bigu.services', 'bigu.directives', 'big
       );     
 
 
-      $routeProvider.when("/Videos",
+      $routeProvider.when("/videos",
           {
             templateUrl: 'partials/videos.html',
             controller:  'VideosCtrl'

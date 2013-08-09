@@ -6,14 +6,14 @@
 <form class = "form-horizontal">
 <select ng-model = "searchBy" ng-change = "searchByChange()">
 <option value = "1">Title</option>
-<option value = "2">Description</option>
-<option value = "3">Website</option>
-<option value = "4">URL</option>
+<option value = "2">Website</option>
+<option value = "3">URL</option>
+<option value = "4">CSID</option>
 </select>
-<input type = "text" placeholder = "1text" ng-show = "showSearchTitle" ng-model = "searchText.title" />
-<input type = "text" placeholder = "2text" ng-show = "showSearchDescription" ng-model = "searchText.description" />
-<input type = "text" placeholder = "3text" ng-show = "showSearchWebsite" ng-model = "searchText.website" />
-<input type = "text" placeholder = "4text" ng-show = "showSearchUrl" ng-model = "searchText.url" />
+<input type = "text" placeholder = "text" ng-show = "showSearchTitle" ng-model = "searchText.title" />
+<input type = "text" placeholder = "text" ng-show = "showSearchWebsite" ng-model = "searchText.website" />
+<input type = "text" placeholder = "text" ng-show = "showSearchUrl" ng-model = "searchText.url" />
+<input type = "text" placeholder = "text" ng-show = "showSearchCsid" ng-model = "searchText.csid" />
 </div>
 <div class = "pull-left">
 <button class = "btn btn-primary" ng-click = "clickAdd()">Add <i class = "icon-plus"></i></button>
@@ -25,9 +25,12 @@
 <thead>
 <tr>
 <th>Title</th>
-<th>Description</th>
 <th>Website</th>
+<th>Length</th>
+<th>Rating</th>
+<th>View Count</th>
 <th>URL</th>
+<th>CSID</th>
 <th>Actions</th>
 </tr>
 </thead>
@@ -35,9 +38,12 @@
 <tbody>
 <tr ng-repeat = "video in videos | filter:searchText">
 <td>{{video.title}}</td>
-<td>{{video.description}}</td>
 <td>{{video.website}}</td>
+<td>{{video.length}}</td>
+<td>{{video.rating}}</td>
+<td>{{video.viewCount}}</td>
 <td>{{video.url}}</td>
+<td>{{video.csid}}</td>
 <td>
 <button class = "btn btn-inverse btn-small" ng-click = "clickEdit(video)">Edit</button>
 <button class = "btn btn-danger btn-small" ng-click = "clickDelete(video)">Delete</button>
@@ -83,7 +89,7 @@
 <div class = "control-group">
 <label class = "control-label" for = "inputDescription">Description</label>
 <div class = "controls">
-<input type = "text" id = "inputDescription" ng-model = "video.description" />
+<input type = "text" id = "inputDescription" />
 </div>
 </div>
 
@@ -104,35 +110,35 @@
 <div class = "control-group">
 <label class = "control-label" for = "inputLength">Length</label>
 <div class = "controls">
-<input type = "text" id = "inputLength" />
+<input type = "text" id = "inputLength" ng-model = "video.length" />
 </div>
 </div>
 
 <div class = "control-group">
 <label class = "control-label" for = "inputRating">Rating</label>
 <div class = "controls">
-<input type = "text" id = "inputRating" />
+<input type = "text" id = "inputRating" ng-model = "video.rating" />
 </div>
 </div>
 
 <div class = "control-group">
 <label class = "control-label" for = "inputCount">View Count</label>
 <div class = "controls">
-<input type = "text" id = "inputCount" />
+<input type = "text" id = "inputCount" ng-model = "video.viewCount" />
 </div>
 </div>
 
 <div class = "control-group">
 <label class = "control-label" for = "inputURL">URL</label>
 <div class = "controls">
-<input type = "text" id = "inputURL" ng-model = "video.url" required />
+<input type = "url" id = "inputURL" ng-model = "video.url" required />
 </div>
 </div>
 
 <div class = "control-group">
 <label class = "control-label" for = "inputCSID">Course/Session ID</label>
 <div class = "controls">
-<input type = "text" id = "inputCSID" />
+<input type = "text" id = "inputCSID" ng-model = "video.csid" required />
 </div>
 </div>
 

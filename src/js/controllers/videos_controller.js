@@ -6,9 +6,9 @@ $scope.videos = [];
 $scope.video = {};
 $scope.searchBy = "";
 $scope.showSearchTitle = true;
-$scope.showSearchDescription = false;
 $scope.showSearchWebsite = false;
 $scope.showSearchUrl = false;
+$scope.showSearchCsid = false;
 
 $scope.clickAdd = function(){
 	$log.info("Add Clicked");
@@ -51,29 +51,29 @@ $scope.clickDelete = function(video){
 
 $scope.searchByChange = function(){
 	$log.info($scope.searchBy);
-	if($scope.searchBy === 1){
+	if($scope.searchBy === "1"){
 		$scope.showSearchTitle = true;
-		$scope.showSearchDescription = false;
 		$scope.showSearchWebsite = false;
 		$scope.showSearchUrl = false;
+		$scope.showSearchCsid = false;
 	}
-	else if($scope.searchBy === 2){
+	else if($scope.searchBy === "2"){
 		$scope.showSearchTitle = false;
-		$scope.showSearchDescription = true;
-		$scope.showSearchWebsite = false;
-		$scope.showSearchUrl = false;
-	}
-	else if($scope.searchBy === 3){
-		$scope.showSearchTitle = false;
-		$scope.showSearchDescription = false;
 		$scope.showSearchWebsite = true;
 		$scope.showSearchUrl = false;
+		$scope.showSearchCsid = false;
 	}
-	else if($scope.searchBy === 4){
+	else if($scope.searchBy === "3"){
 		$scope.showSearchTitle = false;
-		$scope.showSearchDescription = false;
 		$scope.showSearchWebsite = false;
 		$scope.showSearchUrl = true;
+		$scope.showSearchCsid = false;
+	}
+	else if($scope.searchBy === "4"){
+		$scope.showSearchTitle = false;
+		$scope.showSearchWebsite = false;
+		$scope.showSearchUrl = false;
+		$scope.showSearchCsid = true;
 	}
 };
 
