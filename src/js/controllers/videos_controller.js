@@ -4,6 +4,11 @@ $log.info("Video Controller");
 $scope.showGrid = true;
 $scope.videos = [];
 $scope.video = {};
+$scope.searchBy = "";
+$scope.showSearchTitle = true;
+$scope.showSearchDescription = false;
+$scope.showSearchWebsite = false;
+$scope.showSearchUrl = false;
 
 $scope.clickAdd = function(){
 	$log.info("Add Clicked");
@@ -31,17 +36,45 @@ $scope.clickCancel = function(){
 	$scope.showGrid = true;
 };
 
+$scope.clickEdit = function(video){
+	$log.info(video);
+	$scope.video = angular.copy(video);
+	$scope.showGrid = false;
+	$scope.index = $scope.videos.indexOf(video);
+};
+
 $scope.clickDelete = function(video){
 	$log.info(video);
 	var index = $scope.videos.indexOf(video);
 	$scope.videos.splice(index,1);
 };
 
-$scope.clickEdit = function(video){
-	$log.info(video);
-	$scope.video = angular.copy(video);
-	$scope.showGrid = false;
-	$scope.index = $scope.videos.indexOf(video);
+$scope.searchByChange = function(){
+	$log.info($scope.searchBy);
+	if($scope.searchBy === 1){
+		$scope.showSearchTitle = true;
+		$scope.showSearchDescription = false;
+		$scope.showSearchWebsite = false;
+		$scope.showSearchUrl = false;
+	}
+	else if($scope.searchBy === 2){
+		$scope.showSearchTitle = false;
+		$scope.showSearchDescription = true;
+		$scope.showSearchWebsite = false;
+		$scope.showSearchUrl = false;
+	}
+	else if($scope.searchBy === 3){
+		$scope.showSearchTitle = false;
+		$scope.showSearchDescription = false;
+		$scope.showSearchWebsite = true;
+		$scope.showSearchUrl = false;
+	}
+	else if($scope.searchBy === 4){
+		$scope.showSearchTitle = false;
+		$scope.showSearchDescription = false;
+		$scope.showSearchWebsite = false;
+		$scope.showSearchUrl = true;
+	}
 };
 
 });

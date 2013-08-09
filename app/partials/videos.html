@@ -4,12 +4,16 @@
 
 <div class = "control-group pull-right">
 <form class = "form-horizontal">
-
-<select>
-<option>Search by</option>
+<select ng-model = "searchBy" ng-change = "searchByChange()">
+<option value = "1">Title</option>
+<option value = "2">Description</option>
+<option value = "3">Website</option>
+<option value = "4">URL</option>
 </select>
-<input type = "text" ng-model = "searchText" />
-<button class = "btn btn-inverse" type = "button">Search</button>
+<input type = "text" placeholder = "1text" ng-show = "showSearchTitle" ng-model = "searchText.title" />
+<input type = "text" placeholder = "2text" ng-show = "showSearchDescription" ng-model = "searchText.description" />
+<input type = "text" placeholder = "3text" ng-show = "showSearchWebsite" ng-model = "searchText.website" />
+<input type = "text" placeholder = "4text" ng-show = "showSearchUrl" ng-model = "searchText.url" />
 </div>
 <div class = "pull-left">
 <button class = "btn btn-primary" ng-click = "clickAdd()">Add <i class = "icon-plus"></i></button>
@@ -42,7 +46,18 @@
 </tbody>
 </table>
 
-
+<div class="pagination pagination-centered">
+  <ul>
+    <li class="disabled"><a href="#">Prev</a></li>
+    <li class="active"><a href="#">1</a></li>
+    <li class="disabled"><a href="#">2</a></li>
+	 <li class="disabled"><a href="#">3</a></li>
+	 <li class="disabled"><a href="#">4</a></li>
+	 <li class="disabled"><a href="#">5</a></li>
+	 <li class="disabled"><a href="#">Next</a></li>
+  </ul>
+</div>
+</div>
 
 </div>
 
