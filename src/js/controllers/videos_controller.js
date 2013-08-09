@@ -1,5 +1,5 @@
 angular.module('bigu.controllers').controller('VideosCtrl', function ($scope, $log) {
-$log.info("Video Controller");
+$log.info("video controller");
 
 $scope.showGrid = true;
 $scope.videos = [];
@@ -12,12 +12,12 @@ $scope.showSearchUrl = false;
 $scope.showSearchCsid = false;
 
 $scope.clickAdd = function(){
-	$log.info("Add Clicked");
+	$log.info("add clicked");
 	$scope.showGrid = false;
 };
 
 $scope.clickSave = function(){
-	$log.info("Save Clicked");
+	$log.info("save clicked");
 	$log.info($scope.video,$scope.index);
 	if($scope.index > -1)
 	{
@@ -32,7 +32,7 @@ $scope.clickSave = function(){
 };
 
 $scope.clickCancel = function(){
-	$log.info("Cancel Clicked");
+	$log.info("cancel clicked");
 	$scope.showGrid = true;
 };
 
