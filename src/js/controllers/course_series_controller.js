@@ -5,7 +5,8 @@ $log.info("Course Series Controller");
 $scope.showGrid = true;
 $scope.courses = [];
 $scope.searchBy = "";
-$scope.showSearchTitle = true;
+$scope.showSearchAll = true;
+$scope.showSearchTitle = false;
 $scope.showSearchCategory = false;
 $scope.showSearchWebsite = false;
 $scope.showSearchUrl = false;
@@ -56,8 +57,18 @@ $scope.clickCancel = function(){
 
 $scope.searchByChange = function(){
 	$log.info($scope.searchBy);
-	if($scope.searchBy === "1")
+	if($scope.searchBy === "")
 	{
+		$scope.showSearchAll = true;
+		$scope.showSearchTitle = false;
+		$scope.showSearchCategory = false;
+		$scope.showSearchWebsite = false;
+		$scope.showSearchUrl = false;
+		$scope.showSearchType = false;
+	}
+	else if($scope.searchBy === "1")
+	{
+		$scope.showSearchAll = false;
 		$scope.showSearchTitle = true;
 		$scope.showSearchCategory = false;
 		$scope.showSearchWebsite = false;
@@ -66,6 +77,7 @@ $scope.searchByChange = function(){
 	}
 	else if($scope.searchBy === "2")
 	{
+		$scope.showSearchAll = false;
 		$scope.showSearchTitle = false;
 		$scope.showSearchCategory = true;
 		$scope.showSearchWebsite = false;
@@ -74,6 +86,7 @@ $scope.searchByChange = function(){
 	}
 		else if($scope.searchBy === "3")
 	{
+		$scope.showSearchAll = false;
 		$scope.showSearchTitle = false;
 		$scope.showSearchCategory = false;
 		$scope.showSearchWebsite = true;
@@ -82,6 +95,7 @@ $scope.searchByChange = function(){
 	}
 		else if($scope.searchBy === "4")
 	{
+		$scope.showSearchAll = false;
 		$scope.showSearchTitle = false;
 		$scope.showSearchCategory = false;
 		$scope.showSearchWebsite = false;
@@ -90,6 +104,7 @@ $scope.searchByChange = function(){
 	}
 		else if($scope.searchBy === "5")
 	{
+		$scope.showSearchAll = false;
 		$scope.showSearchTitle = false;
 		$scope.showSearchCategory = false;
 		$scope.showSearchWebsite = false;

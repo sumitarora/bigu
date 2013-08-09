@@ -5,7 +5,8 @@ $scope.showGrid = true;
 $scope.videos = [];
 $scope.video = {};
 $scope.searchBy = "";
-$scope.showSearchTitle = true;
+$scope.showSearchAll = true;
+$scope.showSearchTitle = false;
 $scope.showSearchWebsite = false;
 $scope.showSearchUrl = false;
 $scope.showSearchCsid = false;
@@ -13,7 +14,6 @@ $scope.showSearchCsid = false;
 $scope.clickAdd = function(){
 	$log.info("Add Clicked");
 	$scope.showGrid = false;
-	
 };
 
 $scope.clickSave = function(){
@@ -51,25 +51,36 @@ $scope.clickDelete = function(video){
 
 $scope.searchByChange = function(){
 	$log.info($scope.searchBy);
-	if($scope.searchBy === "1"){
+	if($scope.searchBy === ""){
+		$scope.showSearchAll = true;
+		$scope.showSearchTitle = false;
+		$scope.showSearchWebsite = false;
+		$scope.showSearchUrl = false;
+		$scope.showSearchCsid = false;
+	}
+	else if($scope.searchBy === "1"){
+		$scope.showSearchAll = false;
 		$scope.showSearchTitle = true;
 		$scope.showSearchWebsite = false;
 		$scope.showSearchUrl = false;
 		$scope.showSearchCsid = false;
 	}
 	else if($scope.searchBy === "2"){
+		$scope.showSearchAll = false;
 		$scope.showSearchTitle = false;
 		$scope.showSearchWebsite = true;
 		$scope.showSearchUrl = false;
 		$scope.showSearchCsid = false;
 	}
 	else if($scope.searchBy === "3"){
+		$scope.showSearchAll = false;
 		$scope.showSearchTitle = false;
 		$scope.showSearchWebsite = false;
 		$scope.showSearchUrl = true;
 		$scope.showSearchCsid = false;
 	}
 	else if($scope.searchBy === "4"){
+		$scope.showSearchAll = false;
 		$scope.showSearchTitle = false;
 		$scope.showSearchWebsite = false;
 		$scope.showSearchUrl = false;

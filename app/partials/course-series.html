@@ -1,180 +1,183 @@
 <div ng-show = "showGrid">
-<h3>Course/Series</h3>
 
-<div class="control-group pull-right">
-<form class = "form-horizontal">
+  <h3>Course/Series</h3>
+  <form class = "form-horizontal">
 
-<select ng-model = "searchBy" ng-change = "searchByChange()">
-<option value = "1">Title</option>
-<option value = "2">Category</option>
-<option value = "3">Website</option>
-<option value = "4">URL</option>
-<option value = "5">Type</option>
-</select>
-<input type="text" placeholder = "text" ng-show = "showSearchTitle" ng-model = "searchText.title">
-<input type="text" placeholder = "text" ng-show = "showSearchCategory" ng-model = "searchText.category">
-<input type="text" placeholder = "text" ng-show = "showSearchWebsite" ng-model = "searchText.website">
-<input type="text" placeholder = "text" ng-show = "showSearchUrl" ng-model = "searchText.url">
-<input type="text" placeholder = "text" ng-show = "showSearchType" ng-model = "searchText.type">
-</div>
-<div class = "pull-left">
-<button class = "btn btn-primary" ng-click = "clickAdd()">Add <i class = "icon-plus"></i></button>
-</div>
+    <div class="control-group pull-right">
+      <select ng-model = "searchBy" ng-change = "searchByChange()">
+        <option value = "">Search All</option>
+        <option value = "1">Title</option>
+        <option value = "2">Category</option>
+        <option value = "3">Website</option>
+        <option value = "4">URL</option>
+        <option value = "5">Type</option>
+      </select>
+      <input type="text" placeholder = "text" ng-show = "showSearchAll" ng-model = "searchText.$">
+      <input type="text" placeholder = "text" ng-show = "showSearchTitle" ng-model = "searchText.title">
+      <input type="text" placeholder = "text" ng-show = "showSearchCategory" ng-model = "searchText.category">
+      <input type="text" placeholder = "text" ng-show = "showSearchWebsite" ng-model = "searchText.website">
+      <input type="text" placeholder = "text" ng-show = "showSearchUrl" ng-model = "searchText.url">
+      <input type="text" placeholder = "text" ng-show = "showSearchType" ng-model = "searchText.type">
+    </div>
+    <div class = "pull-left">
+      <button class = "btn btn-primary" ng-click = "clickAdd()">Add <i class = "icon-plus"></i></button>
+    </div>
 
-</form>
-<br/>
+  </form>
+  <br/>
 
-<table class = "table table-bordered table-hover table-condensed">
-<thead>
-<tr>
-<th>Title</th>
-<th>Category</th>
-<th>Website</th>
-<th>Duration</th>
-<th>Rating</th>
-<th>View Count</th>
-<th>URL</th>
-<th>Type</th>
-<th>Actions</th>
-</tr>
-</thead>
+  <table class = "table table-bordered table-hover table-condensed">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Website</th>
+        <th>Duration</th>
+        <th>Rating</th>
+        <th>View Count</th>
+        <th>URL</th>
+        <th>Type</th>
+        <th>Actions</th>
+      </tr>
+  </thead>
 
-<tbody>
-<tr ng-repeat = "course in courses | filter:searchText">
-<td>{{course.title}}</td>
-<td>{{course.category}}</td>
-<td>{{course.website}}</td>
-<td>{{course.duration}}</td>
-<td>{{course.rating}}</td>
-<td>{{course.count}}</td>
-<td>{{course.url}}</td>
-<td>{{course.type}}</td>
-<td>
-<button class = "btn btn-inverse btn-small" ng-click = "clickEdit(course)">Edit</button>
-<button class = "btn btn-danger btn-small" ng-click = "clickDelete(course)">Delete</button>
-</td>
-</tr>
-</tbody>
+  <tbody>
+    <tr ng-repeat = "course in courses | filter:searchText">
+      <td>{{course.title}}</td>
+      <td>{{course.category}}</td>
+      <td>{{course.website}}</td>
+      <td>{{course.duration}}</td>
+      <td>{{course.rating}}</td>
+      <td>{{course.count}}</td>
+      <td>{{course.url}}</td>
+      <td>{{course.type}}</td>
+      <td>
+      <button class = "btn btn-inverse btn-small" ng-click = "clickEdit(course)">Edit</button>
+      <button class = "btn btn-danger btn-small" ng-click = "clickDelete(course)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
 
-</table>
+  </table>
 
-<div class="pagination pagination-centered">
-  <ul>
-    <li class="disabled"><a href="#">Prev</a></li>
-    <li class="active"><a href="#">1</a></li>
-    <li class="disabled"><a href="#">2</a></li>
-	 <li class="disabled"><a href="#">3</a></li>
-	 <li class="disabled"><a href="#">4</a></li>
-	 <li class="disabled"><a href="#">5</a></li>
-	 <li class="disabled"><a href="#">Next</a></li>
-  </ul>
-</div>
+  <div class="pagination pagination-centered">
+    <ul>
+      <li class="disabled"><a href="#">Prev</a></li>
+      <li class="active"><a href="#">1</a></li>
+      <li class="disabled"><a href="#">2</a></li>
+    	<li class="disabled"><a href="#">3</a></li>
+    	<li class="disabled"><a href="#">4</a></li>
+    	<li class="disabled"><a href="#">5</a></li>
+    	<li class="disabled"><a href="#">Next</a></li>
+    </ul>
+  </div>
 </div>
 
 <div ng-show = "!showGrid">
-<h3> Course/Series </h3>
 
-<form class = "form-horizontal" ng-submit="clickSave()">
+  <h3> Course/Series </h3>
+  <form class = "form-horizontal" ng-submit="clickSave()">
 
-<div class = "control-group">
-<label class = "control-label" for = "inputId">ID</label>
-<div class = "controls">
-<input type = "text" id = "inputId" />
-</div>
-</div>
+    <div class = "control-group">
+      <label class = "control-label" for = "inputId">ID</label>
+      <div class = "controls">
+        <input type = "text" id = "inputId" />
+      </div>
+    </div>
 
-<div class = "control-group">
-<label class = "control-label" for = "inputTitle">Title</label>
-<div class = "controls">
-<input type = "text" id="inputTitle" ng-model="course.title" required/>
-</div>
-</div>
+    <div class = "control-group">
+      <label class = "control-label" for = "inputTitle">Title</label>
+      <div class = "controls">
+        <input type = "text" id="inputTitle" ng-model="course.title" required/>
+      </div>
+    </div>
 
 
-<div class = "control-group">
-<label class = "control-label" for = "inputDescription">Description</label>
-<div class = "controls">
-<input type = "text" id = "inputDescription" />
-</div>
-</div>
+    <div class = "control-group">
+      <label class = "control-label" for = "inputDescription">Description</label>
+      <div class = "controls">
+        <input type = "text" id = "inputDescription" />
+      </div>
+    </div>
 
-<div class = "control-group">
-<label class = "control-label" for = "inputCategory">Category</label>
-<div class = "controls">
-<select ng-model = "course.category" required>
-  <option value = "">Select Course</option>
-  <option value = "1">Course 1</option>
-  <option value = "2">Course 2</option>
-  <option value = "3">Course 3</option>
-  <option value = "4">Course 4</option>
-  <option value = "5">Course 5</option>
-</select>
-</div>
-</div>
+    <div class = "control-group">
+      <label class = "control-label" for = "inputCategory">Category</label>
+      <div class = "controls">
+        <select ng-model = "course.category" required>
+          <option value = "">Select Course</option>
+          <option value = "1">Course 1</option>
+          <option value = "2">Course 2</option>
+          <option value = "3">Course 3</option>
+          <option value = "4">Course 4</option>
+          <option value = "5">Course 5</option>
+        </select>
+      </div>
+    </div>
 
-<div class = "control-group">
-<label class = "control-label" for = "inputWebsite">Website</label>
-<div class = "controls">
-<select ng-model = "course.website" required>
-  <option value = "">Select Website</option>
-  <option value = "1">Website 1</option>
-  <option value = "2">Website 2</option>
-  <option value = "3">Website 3</option>
-  <option value = "4">Website 4</option>
-  <option value = "5">Website 5</option>
-</select>
-</div>
-</div>
+    <div class = "control-group">
+      <label class = "control-label" for = "inputWebsite">Website</label>
+      <div class = "controls">
+        <select ng-model = "course.website" required>
+          <option value = "">Select Website</option>
+          <option value = "1">Website 1</option>
+          <option value = "2">Website 2</option>
+          <option value = "3">Website 3</option>
+          <option value = "4">Website 4</option>
+          <option value = "5">Website 5</option>
+        </select>
+      </div>
+    </div>
 
-<div class = "control-group">
-<label class = "control-label" for = "inputDuration">Duration</label>
-<div class = "controls">
-<input type = "text" id = "inputDuration" ng-model = "course.duration" />
-</div>
-</div>
+    <div class = "control-group">
+      <label class = "control-label" for = "inputDuration">Duration</label>
+      <div class = "controls">
+        <input type = "text" id = "inputDuration" ng-model = "course.duration" />
+      </div>
+    </div>
 
-<div class = "control-group">
-<label class = "control-label" for = "inputRating">Rating</label>
-<div class = "controls">
-<input type = "text" id = "inputRating" ng-model = "course.rating" />
-</div>
-</div>
+    <div class = "control-group">
+      <label class = "control-label" for = "inputRating">Rating</label>
+      <div class = "controls">
+        <input type = "text" id = "inputRating" ng-model = "course.rating" />
+      </div>
+    </div>
 
-<div class = "control-group">
-<label class = "control-label" for = "inputCount">View Count</label>
-<div class = "controls">
-<input type = "text" id = "inputCount" ng-model = "course.count" />
-</div>
-</div>
+    <div class = "control-group">
+      <label class = "control-label" for = "inputCount">View Count</label>
+      <div class = "controls">
+        <input type = "text" id = "inputCount" ng-model = "course.count" />
+      </div>
+    </div>
 
-<div class = "control-group">
-<label class = "control-label" for = "inputURL">URL</label>
-<div class = "controls">
-<input type = "url" id = "inputURL" ng-model = "course.url" required />
-</div>
-</div>
+    <div class = "control-group">
+      <label class = "control-label" for = "inputURL">URL</label>
+      <div class = "controls">
+        <input type = "url" id = "inputURL" ng-model = "course.url" required />
+      </div>
+    </div>
 
-<div class = "control-group">
-<label class = "control-label" for = "inputType">Type</label>
-<div class = "controls">
-<label class = "radio inline">
-<input type = "radio" ng-model = "course.type" name = "optionsRadios" id = "optionsRadios1" value = "Series">
-Series
-</label>
+    <div class = "control-group">
+      <label class = "control-label" for = "inputType">Type</label>
+      <div class = "controls">
+        <label class = "radio inline">
+        <input type = "radio" ng-model = "course.type" name = "optionsRadios" id = "optionsRadios1" value = "Series">
+        Series
+        </label>
 
-<label class = "radio inline">
-<input type = "radio" ng-model = "course.type" name = "optionsRadios" id = "optionsRadios2" value = "Course">
-Course
-</label>
-</div>
-</div>
+        <label class = "radio inline">
+        <input type = "radio" ng-model = "course.type" name = "optionsRadios" id = "optionsRadios2" value = "Course">
+        Course
+        </label>
+      </div>
+    </div>
 
-<div class = "controls">
-<p class = "btn-center">
-<button class="btn btn-success">Save</button>
-<a class = "btn btn-danger" type = "button" ng-click = "clickCancel()">Cancel</a>
-</p>
-</form>
+    <div class = "controls">
+      <p class = "btn-center">
+        <button class="btn btn-success">Save</button>
+        <a class = "btn btn-danger" type = "button" ng-click = "clickCancel()">Cancel</a>
+      </p>
+    </div>
+  </form>
 </div>
 
 
