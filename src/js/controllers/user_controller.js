@@ -53,6 +53,9 @@ $scope.editClicked = function(duser){
 		$scope.showGrid = true;
 	};
 
+	$scope.display = function(data){
+		return data.splite("").reverse().join(" ");
+	};
 	
 
 	$scope.reversedMessage = function(message){

@@ -37,6 +37,19 @@ angular.module('bigu.filters', []).filter('interpolate', ['version', function (v
     };
   })
 
+  .filter('dfilter', function() {
+    return function(input) {
+      if(input === "Gulabo"){
+          input = "Billo";
+      } else 
+      if(input === "Billo"){
+	input = "Gulabo";
+      }else{
+      return input;
+  }
+    };
+  })
+
 
 
 
