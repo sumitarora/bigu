@@ -32,8 +32,8 @@ angular.module('bigu.filters', []).filter('interpolate', ['version', function (v
   })
 
   .filter('reverse', function() {
-    return function(input) {
-      return input.split(" ").reverse().join(" ");
+    return function(text) {
+      return text.split(" ").reverse().join(" ");
     };
   })
 

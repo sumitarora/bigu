@@ -55,4 +55,8 @@ $scope.editClicked = function(duser){
 
 	
 
+	$scope.reversedMessage = function(message){
+		return message.splite("").reverse().join(" ");
+	};
+
   });

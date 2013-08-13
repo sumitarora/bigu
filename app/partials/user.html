@@ -1,3 +1,4 @@
+
 <h3><b>User Detail Grid ......</b></h3><br><br>
 <a ng-click="addClicked()" class="btn btn-primary">Add Detail</a>
 <div ng-show="showGrid">
@@ -8,9 +9,9 @@
 <select >
 <option>Search by</option>
 </select>
+
 <input type="text text-large" placeholder="text" ng-model="textToSearch.FName">
-<input type="text" ng-model="data.message">
-<h1>{{data.message | reverse}}</h1>
+
 </div>
  <br/>
 
@@ -26,7 +27,7 @@
 </tr>
 <tr ng-repeat="use in users | filter:textToSearch">
 <td>{{use.email | rfilter}}</td>
-<td>{{use.FName | reverse}}</td>
+<td>{{use.FName }}</td>
 <td>{{use.LName}}</td>
 <td>{{use.country}}</td>
 <td>{{use.profession}}</td>
@@ -38,6 +39,7 @@
 
 </tr>
 
+
 </table>
 </table>
 
@@ -45,7 +47,15 @@
    
   </div>
 </div>
+<div>
+	<h1>hi..</h1>
+	<div>
+		<input type="text" ng-model="data.message">
+		<h1> {{data.message | reverse}} </h1>
+	</div>
+</div>
 </form>
+
 </div>
 
 
