@@ -1,23 +1,23 @@
 angular.module('bigu.controllers').controller('VideosCtrl', function ($scope, $log) {
-$log.info("Video Controller");
+$log.info("video controller");
 
 $scope.showGrid = true;
 $scope.videos = [];
 $scope.video = {};
 $scope.searchBy = "";
-$scope.showSearchTitle = true;
+$scope.showSearchAll = true;
+$scope.showSearchTitle = false;
 $scope.showSearchWebsite = false;
 $scope.showSearchUrl = false;
 $scope.showSearchCsid = false;
 
 $scope.clickAdd = function(){
-	$log.info("Add Clicked");
+	$log.info("add clicked");
 	$scope.showGrid = false;
-	
 };
 
 $scope.clickSave = function(){
-	$log.info("Save Clicked");
+	$log.info("save clicked");
 	$log.info($scope.video,$scope.index);
 	if($scope.index > -1)
 	{
@@ -32,7 +32,7 @@ $scope.clickSave = function(){
 };
 
 $scope.clickCancel = function(){
-	$log.info("Cancel Clicked");
+	$log.info("cancel clicked");
 	$scope.showGrid = true;
 };
 
@@ -51,25 +51,36 @@ $scope.clickDelete = function(video){
 
 $scope.searchByChange = function(){
 	$log.info($scope.searchBy);
-	if($scope.searchBy === "1"){
+	if($scope.searchBy === ""){
+		$scope.showSearchAll = true;
+		$scope.showSearchTitle = false;
+		$scope.showSearchWebsite = false;
+		$scope.showSearchUrl = false;
+		$scope.showSearchCsid = false;
+	}
+	else if($scope.searchBy === "1"){
+		$scope.showSearchAll = false;
 		$scope.showSearchTitle = true;
 		$scope.showSearchWebsite = false;
 		$scope.showSearchUrl = false;
 		$scope.showSearchCsid = false;
 	}
 	else if($scope.searchBy === "2"){
+		$scope.showSearchAll = false;
 		$scope.showSearchTitle = false;
 		$scope.showSearchWebsite = true;
 		$scope.showSearchUrl = false;
 		$scope.showSearchCsid = false;
 	}
 	else if($scope.searchBy === "3"){
+		$scope.showSearchAll = false;
 		$scope.showSearchTitle = false;
 		$scope.showSearchWebsite = false;
 		$scope.showSearchUrl = true;
 		$scope.showSearchCsid = false;
 	}
 	else if($scope.searchBy === "4"){
+		$scope.showSearchAll = false;
 		$scope.showSearchTitle = false;
 		$scope.showSearchWebsite = false;
 		$scope.showSearchUrl = false;

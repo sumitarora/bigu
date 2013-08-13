@@ -1,153 +1,155 @@
 <div ng-show = "showGrid">
 
-<h3>Videos</h3>
+	<h3>Videos</h3>
+	<form class = "form-horizontal">
 
-<div class = "control-group pull-right">
-<form class = "form-horizontal">
-<select ng-model = "searchBy" ng-change = "searchByChange()">
-<option value = "1">Title</option>
-<option value = "2">Website</option>
-<option value = "3">URL</option>
-<option value = "4">CSID</option>
-</select>
-<input type = "text" placeholder = "text" ng-show = "showSearchTitle" ng-model = "searchText.title" />
-<input type = "text" placeholder = "text" ng-show = "showSearchWebsite" ng-model = "searchText.website" />
-<input type = "text" placeholder = "text" ng-show = "showSearchUrl" ng-model = "searchText.url" />
-<input type = "text" placeholder = "text" ng-show = "showSearchCsid" ng-model = "searchText.csid" />
-</div>
-<div class = "pull-left">
-<button class = "btn btn-primary" ng-click = "clickAdd()">Add <i class = "icon-plus"></i></button>
-</div>
-</form>
-<br/>
+		<div class = "control-group pull-right">
+			<select ng-model = "searchBy" ng-change = "searchByChange()">
+				<option value = "">Search All</option>
+				<option value = "1">Title</option>
+				<option value = "2">Website</option>
+				<option value = "3">URL</option>
+				<option value = "4">CSID</option>
+			</select>
+			<input type = "text" placeholder = "text" ng-show = "showSearchAll" ng-model = "searchText.$" />
+			<input type = "text" placeholder = "text" ng-show = "showSearchTitle" ng-model = "searchText.title" />
+			<input type = "text" placeholder = "text" ng-show = "showSearchWebsite" ng-model = "searchText.website" />
+			<input type = "text" placeholder = "text" ng-show = "showSearchUrl" ng-model = "searchText.url" />
+			<input type = "text" placeholder = "text" ng-show = "showSearchCsid" ng-model = "searchText.csid" />
+		</div>
+		<div class = "pull-left">
+			<button class = "btn btn-primary" ng-click = "clickAdd()">Add <i class = "icon-plus"></i></button>
+		</div>
 
-<table class = "table table-bordered table-hover table-condensed">
-<thead>
-<tr>
-<th>Title</th>
-<th>Website</th>
-<th>Length</th>
-<th>Rating</th>
-<th>View Count</th>
-<th>URL</th>
-<th>CSID</th>
-<th>Actions</th>
-</tr>
-</thead>
+	</form>
+	<br/>
 
-<tbody>
-<tr ng-repeat = "video in videos | filter:searchText">
-<td>{{video.title}}</td>
-<td>{{video.website}}</td>
-<td>{{video.length}}</td>
-<td>{{video.rating}}</td>
-<td>{{video.viewCount}}</td>
-<td>{{video.url}}</td>
-<td>{{video.csid}}</td>
-<td>
-<button class = "btn btn-inverse btn-small" ng-click = "clickEdit(video)">Edit</button>
-<button class = "btn btn-danger btn-small" ng-click = "clickDelete(video)">Delete</button>
-</td>
-</tr>
-</tbody>
-</table>
+	<table class = "table table-bordered table-hover table-condensed">
+		<thead>
+			<tr>
+			<th>Title</th>
+			<th>Website</th>
+			<th>Length</th>
+			<th>Rating</th>
+			<th>View Count</th>
+			<th>URL</th>
+			<th>CSID</th>
+			<th>Actions</th>
+			</tr>
+		</thead>
 
-<div class="pagination pagination-centered">
-  <ul>
-    <li class="disabled"><a href="#">Prev</a></li>
-    <li class="active"><a href="#">1</a></li>
-    <li class="disabled"><a href="#">2</a></li>
-	 <li class="disabled"><a href="#">3</a></li>
-	 <li class="disabled"><a href="#">4</a></li>
-	 <li class="disabled"><a href="#">5</a></li>
-	 <li class="disabled"><a href="#">Next</a></li>
-  </ul>
-</div>
-</div>
+		<tbody>
+			<tr ng-repeat = "video in videos | filter:searchText">
+			<td>{{video.title}}</td>
+			<td>{{video.website}}</td>
+			<td>{{video.length}}</td>
+			<td>{{video.rating}}</td>
+			<td>{{video.viewCount}}</td>
+			<td>{{video.url}}</td>
+			<td>{{video.csid}}</td>
+			<td>
+			<button class = "btn btn-inverse btn-small" ng-click = "clickEdit(video)">Edit</button>
+			<button class = "btn btn-danger btn-small" ng-click = "clickDelete(video)">Delete</button>
+			</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div class="pagination pagination-centered">
+	  <ul>
+	    <li class="disabled"><a href="#">Prev</a></li>
+	    <li class="active"><a href="#">1</a></li>
+	    <li class="disabled"><a href="#">2</a></li>
+		<li class="disabled"><a href="#">3</a></li>
+		<li class="disabled"><a href="#">4</a></li>
+		<li class="disabled"><a href="#">5</a></li>
+		<li class="disabled"><a href="#">Next</a></li>
+	  </ul>
+	</div>
 
 </div>
 
 <div ng-show = "!showGrid">
-<h3>Videos</h3>
 
-<form class = "form-horizontal" ng-submit = "clickSave()">
+	<h3>Videos</h3>
+	<form class = "form-horizontal" ng-submit = "clickSave()">
 
-<div class = "control-group">
-<label class = "control-label" for = "inputId">ID</label>
-<div class = "controls">
-<input type = "text" id = "inputId" />
-</div>
-</div>
+		<div class = "control-group">
+			<label class = "control-label" for = "inputId">ID</label>
+			<div class = "controls">
+				<input type = "text" id = "inputId" />
+			</div>
+		</div>
 
-<div class = "control-group">
-<label class = "control-label" for = "inputTitle">Title</label>
-<div class = "controls">
-<input type = "text" id = "inputTitle" ng-model = "video.title" required />
-</div>
-</div>
+		<div class = "control-group">
+			<label class = "control-label" for = "inputTitle">Title</label>
+			<div class = "controls">
+				<input type = "text" id = "inputTitle" ng-model = "video.title" required />
+			</div>
+		</div>
 
-<div class = "control-group">
-<label class = "control-label" for = "inputDescription">Description</label>
-<div class = "controls">
-<input type = "text" id = "inputDescription" />
-</div>
-</div>
+		<div class = "control-group">
+			<label class = "control-label" for = "inputDescription">Description</label>
+			<div class = "controls">
+				<input type = "text" id = "inputDescription" />
+			</div>
+		</div>
 
-<div class = "control-group">
-<label class = "control-label" for = "inputWebsite">Website</label>
-<div class = "controls">
-<select ng-model = "video.website" required>
-<option value = "">Select Website</option>
-<option value = "1">Website 1</option>
-<option value = "2">Website 2</option>
-<option value = "3">Website 3</option>
-<option value = "4">Website 4</option>
-<option value = "5">Website 5</option>
-</select>
-</div>
-</div>
+		<div class = "control-group">
+			<label class = "control-label" for = "inputWebsite">Website</label>
+			<div class = "controls">
+				<select ng-model = "video.website" required>
+					<option value = "">Select Website</option>
+					<option value = "1">Website 1</option>
+					<option value = "2">Website 2</option>
+					<option value = "3">Website 3</option>
+					<option value = "4">Website 4</option>
+					<option value = "5">Website 5</option>
+				</select>
+			</div>
+		</div>
 
-<div class = "control-group">
-<label class = "control-label" for = "inputLength">Length</label>
-<div class = "controls">
-<input type = "text" id = "inputLength" ng-model = "video.length" />
-</div>
-</div>
+		<div class = "control-group">
+			<label class = "control-label" for = "inputLength">Length</label>
+			<div class = "controls">
+				<input type = "text" id = "inputLength" ng-model = "video.length" />
+			</div>
+		</div>
 
-<div class = "control-group">
-<label class = "control-label" for = "inputRating">Rating</label>
-<div class = "controls">
-<input type = "text" id = "inputRating" ng-model = "video.rating" />
-</div>
-</div>
+		<div class = "control-group">
+			<label class = "control-label" for = "inputRating">Rating</label>
+			<div class = "controls">
+				<input type = "text" id = "inputRating" ng-model = "video.rating" />
+			</div>
+		</div>
 
-<div class = "control-group">
-<label class = "control-label" for = "inputCount">View Count</label>
-<div class = "controls">
-<input type = "text" id = "inputCount" ng-model = "video.viewCount" />
-</div>
-</div>
+		<div class = "control-group">
+			<label class = "control-label" for = "inputCount">View Count</label>
+			<div class = "controls">
+				<input type = "text" id = "inputCount" ng-model = "video.viewCount" />
+			</div>
+		</div>
 
-<div class = "control-group">
-<label class = "control-label" for = "inputURL">URL</label>
-<div class = "controls">
-<input type = "url" id = "inputURL" ng-model = "video.url" required />
-</div>
-</div>
+		<div class = "control-group">
+			<label class = "control-label" for = "inputURL">URL</label>
+			<div class = "controls">
+				<input type = "url" id = "inputURL" ng-model = "video.url" required />
+			</div>
+		</div>
 
-<div class = "control-group">
-<label class = "control-label" for = "inputCSID">Course/Session ID</label>
-<div class = "controls">
-<input type = "text" id = "inputCSID" ng-model = "video.csid" required />
-</div>
-</div>
+		<div class = "control-group">
+			<label class = "control-label" for = "inputCSID">Course/Session ID</label>
+			<div class = "controls">
+				<input type = "text" id = "inputCSID" ng-model = "video.csid" required />
+			</div>
+		</div>
 
-<div class = "controls">
-<p class = "btn-center">
-<button class = "btn btn-success">Save</button>
-<a class = "btn btn-danger" ng-click = "clickCancel()">Cancel</a>
-</p>
-</div>
+		<div class = "controls">
+			<p class = "btn-center">
+				<button class = "btn btn-success">Save</button>
+				<a class = "btn btn-danger" ng-click = "clickCancel()">Cancel</a>
+			</p>
+		</div>
 
-</form>
+	</form>
 </div>
