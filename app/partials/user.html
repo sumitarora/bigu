@@ -8,8 +8,9 @@
 <select >
 <option>Search by</option>
 </select>
-<input type="text text-large" placeholder = "text">
-<button class="btn btn-inverse" type="button" class="btn">Search</button>
+<input type="text text-large" placeholder="text" ng-model="textToSearch.FName">
+<input type="text" ng-model="data.message">
+<h1>{{data.message | reverse}}</h1>
 </div>
  <br/>
 
@@ -23,9 +24,9 @@
    <td><b>Facebook</b></td>
    <td><b>Twitter</b></td>
 </tr>
-<tr ng-repeat="use in users">
-<td>{{use.email}}</td>
-<td>{{use.FName}}</td>
+<tr ng-repeat="use in users | filter:textToSearch">
+<td>{{use.email | rfilter}}</td>
+<td>{{use.FName | reverse}}</td>
 <td>{{use.LName}}</td>
 <td>{{use.country}}</td>
 <td>{{use.profession}}</td>

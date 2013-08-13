@@ -9,7 +9,7 @@ $log.info(" This is User controller ");
 	};
 
 	$scope.users = [
-	{email:"meenubhagat91@yahoo.com" ,FName:"Meenu",LName:"Bhagat",profession:"Student",country:"India",facebook:"fb@facebook.com",twitter:"mfjn@twitter.com"},
+	{email:"MEENUBHAGAT91@yahoo.com" ,FName:"Meenu",LName:"Bhagat",profession:"Student",country:"India",facebook:"fb@facebook.com",twitter:"mfjn@twitter.com"},
 	{email:"rubyverma@yahoo.com" ,FName:"Ruby",LName:"verma",profession:"Student",country:"Canada",facebook:"fb@facebook.com",twitter:"jhjh@twitter.com"},
 	{email:"Arorasumit91@yahoo.com" ,FName:"Sumit",LName:"Arora",profession:"Student",country:"Canada",facebook:"fb@facebook.com",twitter:"hyg@twitter.com"},
 	{email:"sbhagat@yahoo.com" ,FName:"Sonia",LName:"Bhagat",profession:"Student",country:"India",facebook:"fb@facebook.com",twitter:"kjgug@twitter.com"}];
