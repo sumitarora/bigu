@@ -12,7 +12,7 @@ $scope.showSearchUrl = false;
 $scope.showSearchCsid = false;
 
 $scope.clickAdd = function(){
-	$log.info("add clicked");
+	//$log.info("add clicked");
 	$scope.showGrid = false;
 };
 
